@@ -1,5 +1,5 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 3
+* Issue HWM: 4
 
 # 🤔 결정사항
 
@@ -9,6 +9,12 @@
 # 📕 중요
 
 # 📙 일반
+## Issue4: 입력 초기값 변경 및 폰트 크기 확대 (등록: 2026.03.04)
+* 목적: URL 초기값을 https://finfra.kr/en/으로 설정하고, 텍스트 입력 폰트 크기를 늘려 사용성을 개선함
+* 상세: 
+    - QRGeneratorView.swift의 inputText 초기값을 'https://finfra.kr/en/'으로 변경
+    - TextEditor에 .font() 수식어를 사용하여 폰트 크기를 기본 글꼴 대비 약 2배 확대 (예: .title 또는 .system(size: 24) 등 반영)
+
 # 📘 선택
 
 # 🌱 이슈후보
