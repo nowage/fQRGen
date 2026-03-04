@@ -1,5 +1,5 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 5
+* Issue HWM: 6
 
 # 🤔 결정사항
 
@@ -14,6 +14,18 @@
 # 🌱 이슈후보
 
 # ✅ 완료
+## Issue6: QR 코드 생성 후 결과 영역으로 자동 스크롤 추가 (등록: 2026.03.04) (✅ 완료, 924b756) ✅
+* 목적: QR 코드 생성 버튼 클릭 시 생성된 결과로 화면이 자동 스크롤되도록 하여 사용자 편의성을 개선함
+* 상세:
+    - QRGeneratorView.swift에 ScrollViewReader 추가
+    - 코드 생성 버튼 클릭 시 id("qrResult") 요소로 scrollTo 동작 호출
+* 구현 명세:
+    - `QRGeneratorView.swift` 내의 스크롤 영역을 `ScrollViewReader`로 감싸고, 결과 뷰에 `.id("qrResult")` 부여
+    - 버튼 액션 함수 `generateQRCode(proxy: ScrollViewProxy)`에서 코드가 성공적으로 생성되었을 때, `DispatchQueue.main.asyncAfter`와 `withAnimation` 블록 내에서 `proxy.scrollTo("qrResult", anchor: .center)`를 호출
+* 완료 항목:
+    - [x] ScrollViewReader 추가
+    - [x] 스크롤 타겟 ID 설정 및 자동 스크롤 구현
+
 ## Issue5: 앱 탭 전환 단축키 추가 (Cmd+1/2/3) (등록: 2026.03.04) (✅ 완료, 9738f2f) ✅
 * 목적: Cmd+1(QR 생성), Cmd+2(히스토리), Cmd+3(설정)으로 탭 전환 단축키를 추가하여 키보드 접근성 향상
 * 상세:
@@ -107,6 +119,7 @@
 # 📜 참고
 
 * Save Point :
+      - 2026.03.04: 924b756 (Close Issue6)
       - 2026.03.04: 9738f2f (Close Issue5)
       - 2026.03.04: 690bdb7 (Close Issue4)
       - 2026.03.04: 8187371 (Close Issue2, Issue3)
