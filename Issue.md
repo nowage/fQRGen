@@ -6,7 +6,17 @@
 # 🌱 이슈후보
 
 # 🚧 진행중
-## Issue1: 다국어 지원 기능 (8개 언어) 추가 (등록: 2026.03.04)
+# 📕 중요
+
+# 📙 일반
+
+
+# 📘 선택
+
+# 🌱 이슈후보
+
+# ✅ 완료
+## Issue1: 다국어 지원 기능 (8개 언어) 추가 (등록: 2026.03.04) (✅ 완료, f1323ae) ✅
 * 목적: 현재 한국어 전용 SwiftUI 앱에 8개 언어 다국어(i18n) 지원을 추가하여 사용자 접근성 향상
 * 상세:
     - 지원 언어: ko, en, ja, de, es, fr, zh-Hans, zh-Hant
@@ -17,11 +27,12 @@
     - 일반 UI: QRGeneratorView, HistoryView, MenuBarManager 등 42개 문자열
     - 설정 UI: SettingsView 24개 문자열
     - 번역 스크립트: .agent/skills/localization/scripts/python/
+    - 누락 번역 보완: "웹사이트", "고급 설정", "QR 코드 생성" 등 버튼 및 설정 문자열 추가 번역 및 로딩 완료
 * 완료 항목:
-    - [v] 8개 언어 × Localizable.strings 생성 (각 66개 키)
-    - [v] knownRegions 업데이트 (project.pbxproj)
-    - [v] PBXFileSystemSynchronizedRootGroup 자동 인식 확인
-    - [~] Xcode 빌드 후 UI 번역 동작 확인 (사용자 검증 필요)
+    - [x] 8개 언어 × Localizable.strings 생성 (각 66개 키)
+    - [x] knownRegions 업데이트 (project.pbxproj)
+    - [x] PBXFileSystemSynchronizedRootGroup 자동 인식 확인
+    - [x] Xcode 빌드 후 UI 번역 동작 확인 (사용자 검증 필요)
 
 ### Issue1_1: 앱 내 언어 전환 즉시 반영 구현 (등록: 2026.03.04)
 * 목적: 언어 선택 UI에서 언어를 변경할 때 앱 UI가 즉시 전환되도록 구현
@@ -39,16 +50,6 @@
     - Text("\\(history.items.count)개") 의 '개' 단위 처리 (개 → items 또는 포맷 스트링 적용)
     - translate-all-strings.py TRANSLATIONS 사전에 누락 항목 추가 후 재실행
 
-# 📕 중요
-
-# 📙 일반
-
-
-# 📘 선택
-
-# 🌱 이슈후보
-
-# ✅ 완료
 # ⏸️ 보류
 # 🚫 취소
 # 📜 참고
