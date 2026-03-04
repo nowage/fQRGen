@@ -1,16 +1,16 @@
 ---
-description: "[RELEASE ONLY] 프로덕션 환경 배포 및 구동 확인"
+description: "[RELEASE ONLY] Release 빌드를 /Applications에 배포하고, 버전을 올리며, 앱을 교체합니다."
 ---
 
 > [!CAUTION]
-> **릴리스 전용 (Use Only for Releases)**: 이 워크플로우는 프로덕션 서버에 리소스를 세팅하거나 앱을 배포하기 전 의존성을 확인하고 프로덕션 구동이 정상적인지 점검합니다.
+> **릴리스 전용 (Use Only for Releases)**: 이 워크플로우는 **앱 버전을 증가(Bump Version)**시키고 현재 설치된 앱을 **보관(Archive) 및 교체(Replace)**합니다.
+> **단순 검증용 (For Verification Only)**: `/verify`를 사용하세요.
 
-1. **프로덕션 모듈 설치 (Install Dependencies)**:
-   ```bash
-   npm ci --omit=dev
-   ```
+1. **릴리스 배포 실행 (Execute Release Deployment)**:
+   - 버전 증가 (예: 1.0.0 -> 1.0.1)
+   - 현재 앱 보관 (Archive)
+   - `/Applications/_nowage_app/nowQRGen.app` 빌드 및 교체
 
-2. **프로덕션 서버 구동 (Production Run)**:
    ```bash
-   NODE_ENV=production npm start
+   .agent/skills/deployment/scripts/deploy.sh
    ```
