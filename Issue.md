@@ -120,6 +120,7 @@
 # 📜 참고
 
 * Save Point :
+      - 2026.03.05 v1.1 Release (0057d2e)
       - 2026.03.04: 924b756 (Close Issue6)
       - 2026.03.04: 9738f2f (Close Issue5)
       - 2026.03.04: 690bdb7 (Close Issue4)
