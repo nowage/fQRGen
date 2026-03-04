@@ -49,8 +49,8 @@ class QRCodeGenerator: ObservableObject {
     @discardableResult
     func saveQRCodeToFile(_ image: NSImage, suggestedFilename: String = "QRCode.png") -> Bool {
         let savePanel = NSSavePanel()
-        savePanel.title = "QR 코드 저장"
-        savePanel.message = "QR 코드를 저장할 위치를 선택하세요"
+        savePanel.title = "QR 코드 저장".localized
+        savePanel.message = "QR 코드를 저장할 위치를 선택하세요".localized
         savePanel.nameFieldStringValue = suggestedFilename
         
         // macOS 버전별 호환성 처리

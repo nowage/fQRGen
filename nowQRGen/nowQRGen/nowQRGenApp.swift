@@ -21,6 +21,9 @@ struct nowQRGenApp: App {
                 .onAppear {
                     menuBarManager.setupMenuBar()
                 }
+                .onChange(of: appLanguage) { _ in
+                    menuBarManager.refreshMenu()
+                }
                 .onDisappear {
                     // 앱이 완전히 종료될 때만 메뉴바 아이템 제거
                 }
@@ -33,6 +36,22 @@ struct nowQRGenApp: App {
                     NotificationCenter.default.post(name: Notification.Name("OpenSettings"), object: nil)
                 }
                 .keyboardShortcut(",", modifiers: .command)
+            }
+            CommandGroup(after: .toolbar) {
+                Button("QR 생성") {
+                    NotificationCenter.default.post(name: Notification.Name("SelectTab"), object: 0)
+                }
+                .keyboardShortcut("1", modifiers: .command)
+
+                Button("히스토리") {
+                    NotificationCenter.default.post(name: Notification.Name("SelectTab"), object: 1)
+                }
+                .keyboardShortcut("2", modifiers: .command)
+
+                Button("설정") {
+                    NotificationCenter.default.post(name: Notification.Name("SelectTab"), object: 2)
+                }
+                .keyboardShortcut("3", modifiers: .command)
             }
         }
     }

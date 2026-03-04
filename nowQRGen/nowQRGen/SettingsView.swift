@@ -59,7 +59,7 @@ struct SettingsView: View {
                                 .foregroundColor(.secondary)
                             
                             HStack {
-                                Text("크기: \(Int(defaultScale))")
+                                (Text("크기:") + Text(" \(Int(defaultScale))"))
                                     .frame(width: 100, alignment: .leading)
                                 Slider(value: $defaultScale, in: 5...20, step: 1)
                             }
@@ -72,7 +72,7 @@ struct SettingsView: View {
                             
                             Picker("오류 정정 레벨", selection: $defaultCorrectionLevel) {
                                 ForEach(correctionLevels, id: \.self) { level in
-                                    Text("\(level) \(correctionLabels[level] ?? "")").tag(level)
+                                    (Text(level) + Text(" ") + Text(LocalizedStringKey(correctionLabels[level] ?? ""))).tag(level)
                                 }
                             }
                             .pickerStyle(MenuPickerStyle())
@@ -117,11 +117,12 @@ struct SettingsView: View {
                                     .font(.subheadline)
                                 HStack(spacing: 2) {
                                     Text("\(history.items.count)")
+                                        .bold()
                                     Text("개")
+                                        .bold()
                                 }
-                                    .font(.title2)
-                                    .bold()
-                                    .foregroundColor(.blue)
+                                .font(.title2)
+                                .foregroundColor(.blue)
                             }
                             
                             Spacer()
@@ -208,10 +209,10 @@ struct SettingsView: View {
     
     private func showClearHistoryConfirmation() {
         let alert = NSAlert()
-        alert.messageText = "히스토리 전체 삭제"
-        alert.informativeText = "모든 QR 코드 히스토리가 삭제됩니다. 이 작업은 되돌릴 수 없습니다."
-        alert.addButton(withTitle: "삭제")
-        alert.addButton(withTitle: "취소")
+        alert.messageText = "히스토리 전체 삭제".localized
+        alert.informativeText = "모든 QR 코드 히스토리가 삭제됩니다. 이 작업은 되돌릴 수 없습니다.".localized
+        alert.addButton(withTitle: "삭제".localized)
+        alert.addButton(withTitle: "취소".localized)
         alert.alertStyle = .warning
         
         if alert.runModal() == .alertFirstButtonReturn {

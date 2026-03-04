@@ -1,0 +1,228 @@
+classDiagram
+    direction TB
+
+    %% =====================
+    %% 앱 진입점
+    %% =====================
+    class nowQRGenApp["🚀 nowQRGenApp"] {
+        <<@main App>>
+        -menuBarManager: MenuBarManager
+        -history: QRCodeHistory
+        -appLanguage: String
+        +body: Scene
+    }
+
+    %% =====================
+    %% UI 레이어
+    %% =====================
+    class MainTabView["🗂️ MainTabView"] {
+        <<View>>
+        -selectedTab: Int
+        +body: View
+    }
+
+    class ContentView["📄 ContentView"] {
+        <<View>>
+        +body: View
+    }
+
+    class QRGeneratorView["⚙️ QRGeneratorView"] {
+        <<View>>
+        -qrGenerator: QRCodeGenerator
+        -history: QRCodeHistory
+        -inputText: String
+        -qrImage: NSImage
+        -scale: Double
+        -correctionLevel: String
+        +body: View
+        -generateQRCode()
+        -shareQRCode()
+        -saveAsFile()
+        -quickSave()
+        -copyToClipboard()
+    }
+
+    class QuickInputButton["🔘 QuickInputButton"] {
+        <<View>>
+        +title: String
+        +icon: String
+        +color: Color
+        +action: Closure
+        +body: View
+    }
+
+    class ActionButton["▶️ ActionButton"] {
+        <<View>>
+        +title: String
+        +icon: String
+        +color: Color
+        +action: Closure
+        +body: View
+    }
+
+    class HistoryView["📜 HistoryView"] {
+        <<View>>
+        -history: QRCodeHistory
+        -qrGenerator: QRCodeGenerator
+        -selectedItem: QRCodeItem
+        -searchText: String
+        -filteredItems: [QRCodeItem]
+        +body: View
+        -shareItem()
+        -showClearHistoryAlert()
+    }
+
+    class HistoryItemCard["🃏 HistoryItemCard"] {
+        <<View>>
+        +item: QRCodeItem
+        +qrGenerator: QRCodeGenerator
+        +onTap: Closure
+        +onShare: Closure
+        +onDelete: Closure
+        -qrImage: NSImage
+        +body: View
+    }
+
+    class QRDetailSheet["🔍 QRDetailSheet"] {
+        <<View>>
+        +item: QRCodeItem
+        +qrGenerator: QRCodeGenerator
+        -qrImage: NSImage
+        +body: View
+        -shareQRCode()
+        -saveQRCode()
+        -copyToClipboard()
+    }
+
+    class SettingsView["⚙️ SettingsView"] {
+        <<View>>
+        -defaultScale: Double
+        -defaultCorrectionLevel: String
+        -appLanguage: String
+        -history: QRCodeHistory
+        +body: View
+        -showClearHistoryConfirmation()
+    }
+
+    class InfoRow["ℹ️ InfoRow"] {
+        <<View>>
+        +label: LocalizedStringKey
+        +value: String
+        +body: View
+    }
+
+    class FeatureRow["✅ FeatureRow"] {
+        <<View>>
+        +icon: String
+        +text: LocalizedStringKey
+        +body: View
+    }
+
+    %% =====================
+    %% 비즈니스 로직 레이어
+    %% =====================
+    class QRCodeGenerator["🔲 QRCodeGenerator"] {
+        <<ObservableObject>>
+        -context: CIContext
+        +generateQRCode(text, scale, correctionLevel) NSImage
+        +saveQRCodeToFile(image, suggestedFilename) Bool
+        +saveImageToURL(image, url) Bool
+        +quickSaveToDownloads(image, filename) URL
+    }
+
+    class MenuBarManager["📌 MenuBarManager"] {
+        <<ObservableObject>>
+        -statusBarItem: NSStatusItem
+        -qrGenerator: QRCodeGenerator
+        -history: QRCodeHistory
+        +setupMenuBar()
+        +removeMenuBar()
+        -createMenu() NSMenu
+        -showQuickGenerate()
+        -generateFromClipboard()
+        -generateAndSaveQR(text)
+        -openMainApp()
+        -quitApp()
+    }
+
+    class SharingService["📤 SharingService"] {
+        <<struct>>
+        +share(items, sourceView)$
+        +shareItems(items)$
+    }
+
+    %% =====================
+    %% 데이터 모델 레이어
+    %% =====================
+    class QRCodeHistory["📚 QRCodeHistory"] {
+        <<ObservableObject>>
+        +items: [QRCodeItem]
+        -userDefaults: UserDefaults
+        -historyKey: String
+        +addItem(item)
+        +removeItem(item)
+        +clearHistory()
+        -saveHistory()
+        -loadHistory()
+    }
+
+    class QRCodeItem["📦 QRCodeItem"] {
+        <<Identifiable, Codable>>
+        +id: UUID
+        +text: String
+        +timestamp: Date
+        +filename: String
+        +init(text, filename)
+    }
+
+    %% =====================
+    %% 관계 정의
+    %% =====================
+
+    %% 앱 진입점 관계
+    nowQRGenApp --> MainTabView : 루트 뷰
+    nowQRGenApp --> MenuBarManager : @StateObject
+    nowQRGenApp --> QRCodeHistory : @StateObject
+
+    %% UI 구조 관계
+    ContentView --> MainTabView : 래핑
+    MainTabView --> QRGeneratorView : 탭0
+    MainTabView --> HistoryView : 탭1
+    MainTabView --> SettingsView : 탭2
+
+    %% QRGeneratorView 하위 컴포넌트
+    QRGeneratorView --> QuickInputButton : 사용
+    QRGeneratorView --> ActionButton : 사용
+    QRGeneratorView --> QRCodeGenerator : @StateObject
+    QRGeneratorView --> QRCodeHistory : @EnvironmentObject
+
+    %% HistoryView 하위 컴포넌트
+    HistoryView --> HistoryItemCard : ForEach
+    HistoryView --> QRDetailSheet : Sheet
+    HistoryView --> QRCodeGenerator : @StateObject
+    HistoryView --> QRCodeHistory : @EnvironmentObject
+
+    %% QRDetailSheet 하위 컴포넌트
+    QRDetailSheet --> ActionButton : 사용
+
+    %% SettingsView 하위 컴포넌트
+    SettingsView --> InfoRow : 사용
+    SettingsView --> FeatureRow : 사용
+    SettingsView --> QRCodeHistory : @EnvironmentObject
+
+    %% 비즈니스 로직 관계
+    QRGeneratorView --> QRCodeGenerator : 의존
+    HistoryView --> QRCodeGenerator : 의존
+    QRDetailSheet --> QRCodeGenerator : 의존
+    MenuBarManager --> QRCodeGenerator : 의존
+    MenuBarManager --> QRCodeHistory : 독립 인스턴스
+
+    %% 공유 서비스
+    QRGeneratorView --> SharingService : 사용
+    HistoryView --> SharingService : 사용
+    QRDetailSheet --> SharingService : 사용
+
+    %% 데이터 모델
+    QRCodeHistory --> QRCodeItem : contains
+    HistoryItemCard --> QRCodeItem : 표시
+    QRDetailSheet --> QRCodeItem : 표시

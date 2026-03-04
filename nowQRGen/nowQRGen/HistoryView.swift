@@ -115,10 +115,10 @@ struct HistoryView: View {
     
     private func showClearHistoryAlert() {
         let alert = NSAlert()
-        alert.messageText = "히스토리 전체 삭제"
-        alert.informativeText = "모든 QR 코드 히스토리가 삭제됩니다."
-        alert.addButton(withTitle: "삭제")
-        alert.addButton(withTitle: "취소")
+        alert.messageText = "히스토리 전체 삭제".localized
+        alert.informativeText = "모든 QR 코드 히스토리가 삭제됩니다.".localized
+        alert.addButton(withTitle: "삭제".localized)
+        alert.addButton(withTitle: "취소".localized)
         alert.alertStyle = .warning
         
         if alert.runModal() == .alertFirstButtonReturn {
@@ -305,7 +305,7 @@ struct QRDetailSheet: View {
         guard let qrImage = qrImage else { return }
         let filename = "QR-\(item.timestamp.timeIntervalSince1970).png"
         if qrGenerator.saveQRCodeToFile(qrImage, suggestedFilename: filename) {
-            alertMessage = "파일이 저장되었습니다."
+            alertMessage = "파일이 저장되었습니다.".localized
             showingAlert = true
         }
     }
@@ -315,7 +315,7 @@ struct QRDetailSheet: View {
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
         pasteboard.writeObjects([qrImage])
-        alertMessage = "클립보드에 복사되었습니다."
+        alertMessage = "클립보드에 복사되었습니다.".localized
         showingAlert = true
     }
 }
