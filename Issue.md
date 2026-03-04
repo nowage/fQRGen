@@ -9,22 +9,12 @@
 # 📕 중요
 
 # 📙 일반
-## Issue3: 설정창 2열 레이아웃 및 창 크기 고정 (등록: 2026.03.04)
-* 목적: 모든 창의 크기를 고정하고, 설정창을 2열 레이아웃으로 변경하여 스크롤 없이 모든 설정 항목을 표시
-* 상세: 
-    - SettingsView의 VStack 세로 배치를 HStack + VStack 2열 구조로 변경
-    - 좌측 열: 기본 설정 + 히스토리 관리, 우측 열: 앱 정보 + 지원 기능
-    - MainTabView 및 각 탭 뷰에 고정 frame 적용 (minWidth/maxWidth, minHeight/maxHeight 통일)
-    - 히스토리 탭은 내부 List/ScrollView에서 자체 스크롤 처리하므로 창 고정에 영향 없음
-    - 외부 창 레벨의 스크롤 제거 (.scrollDisabled 또는 고정 frame)
-* 구현 명세:
-    - `SettingsView`의 내부 요소를 `HStack` 안에 두 개의 `VStack`을 배치하여 2열 구조로 변경 (좌측: 기본 설정+히스토리 관리, 우측: 앱 정보+지원 기능)
-    - `MainTabView`에 `.frame(width: 800, height: 600)`을 적용하여 창 크기를 고정
-* 완료 항목:
-    - [x] SettingsView 2열 구조 적용
-    - [x] 창 크기 고정 및 외부 스크롤 제거
+# 📘 선택
 
-## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04)
+# 🌱 이슈후보
+
+# ✅ 완료
+## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04) (✅ 완료, 8187371) ✅
 * 목적: cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정
 * 상세: 
     - nowQRGenApp.swift의 Settings { ... } Scene 제거 (별도 설정 윈도우 생성 원인)
@@ -41,11 +31,21 @@
 
 
 
-# 📘 선택
+## Issue3: 설정창 2열 레이아웃 및 창 크기 고정 (등록: 2026.03.04) (✅ 완료, 8187371) ✅
+* 목적: 모든 창의 크기를 고정하고, 설정창을 2열 레이아웃으로 변경하여 스크롤 없이 모든 설정 항목을 표시
+* 상세: 
+    - SettingsView의 VStack 세로 배치를 HStack + VStack 2열 구조로 변경
+    - 좌측 열: 기본 설정 + 히스토리 관리, 우측 열: 앱 정보 + 지원 기능
+    - MainTabView 및 각 탭 뷰에 고정 frame 적용 (minWidth/maxWidth, minHeight/maxHeight 통일)
+    - 히스토리 탭은 내부 List/ScrollView에서 자체 스크롤 처리하므로 창 고정에 영향 없음
+    - 외부 창 레벨의 스크롤 제거 (.scrollDisabled 또는 고정 frame)
+* 구현 명세:
+    - `SettingsView`의 내부 요소를 `HStack` 안에 두 개의 `VStack`을 배치하여 2열 구조로 변경 (좌측: 기본 설정+히스토리 관리, 우측: 앱 정보+지원 기능)
+    - `MainTabView`에 `.frame(width: 800, height: 600)`을 적용하여 창 크기를 고정
+* 완료 항목:
+    - [x] SettingsView 2열 구조 적용
+    - [x] 창 크기 고정 및 외부 스크롤 제거
 
-# 🌱 이슈후보
-
-# ✅ 완료
 ## Issue1: 다국어 지원 기능 (8개 언어) 추가 (등록: 2026.03.04) (✅ 완료, f1323ae) ✅
 * 목적: 현재 한국어 전용 SwiftUI 앱에 8개 언어 다국어(i18n) 지원을 추가하여 사용자 접근성 향상
 * 상세:
@@ -85,4 +85,5 @@
 # 📜 참고
 
 * Save Point :
+      - 2026.03.04: 8187371 (Close Issue2, Issue3)
       - 2026.03.04: f1323ae (Close Issue1)
