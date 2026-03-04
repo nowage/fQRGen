@@ -6,7 +6,15 @@
 # 🌱 이슈후보
 
 # 🚧 진행중
-## Issue5: 앱 탭 전환 단축키 추가 (Cmd+1/2/3) (등록: 2026.03.04)
+# 📕 중요
+
+# 📙 일반
+# 📘 선택
+
+# 🌱 이슈후보
+
+# ✅ 완료
+## Issue5: 앱 탭 전환 단축키 추가 (Cmd+1/2/3) (등록: 2026.03.04) (✅ 완료, 9738f2f) ✅
 * 목적: Cmd+1(QR 생성), Cmd+2(히스토리), Cmd+3(설정)으로 탭 전환 단축키를 추가하여 키보드 접근성 향상
 * 상세:
     - nowQRGenApp.swift의 `.commands` 블록에 Cmd+1/2/3 단축키 정의
@@ -16,14 +24,6 @@
     - `nowQRGenApp.swift`: `.commands` 내 `CommandGroup`에 Cmd+1/2/3 Button 추가, 각각 "SelectTab" Notification 발송
     - `MainTabView.swift`: `.onReceive`로 Notification 수신하여 `selectedTab` 값 변경
 
-# 📕 중요
-
-# 📙 일반
-# 📘 선택
-
-# 🌱 이슈후보
-
-# ✅ 완료
 ## Issue4: 입력 초기값 변경 및 폰트 크기 확대 (등록: 2026.03.04) (✅ 완료, 690bdb7) ✅
 * 목적: URL 초기값을 https://finfra.kr/en/으로 설정하고, 텍스트 입력 폰트 크기를 늘려 사용성을 개선함
 * 상세: 
@@ -107,6 +107,7 @@
 # 📜 참고
 
 * Save Point :
+      - 2026.03.04: 9738f2f (Close Issue5)
       - 2026.03.04: 690bdb7 (Close Issue4)
       - 2026.03.04: 8187371 (Close Issue2, Issue3)
       - 2026.03.04: f1323ae (Close Issue1)
