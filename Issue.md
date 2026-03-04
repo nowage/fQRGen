@@ -1,5 +1,5 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 1
+* Issue HWM: 3
 
 # 🤔 결정사항
 
@@ -9,6 +9,23 @@
 # 📕 중요
 
 # 📙 일반
+## Issue3: 설정창 2열 레이아웃 및 창 크기 고정 (등록: 2026.03.04)
+* 목적: 모든 창의 크기를 고정하고, 설정창을 2열 레이아웃으로 변경하여 스크롤 없이 모든 설정 항목을 표시
+* 상세: 
+    - SettingsView의 VStack 세로 배치를 HStack + VStack 2열 구조로 변경
+    - 좌측 열: 기본 설정 + 히스토리 관리, 우측 열: 앱 정보 + 지원 기능
+    - MainTabView 및 각 탭 뷰에 고정 frame 적용 (minWidth/maxWidth, minHeight/maxHeight 통일)
+    - 히스토리 탭은 내부 List/ScrollView에서 자체 스크롤 처리하므로 창 고정에 영향 없음
+    - 외부 창 레벨의 스크롤 제거 (.scrollDisabled 또는 고정 frame)
+
+## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04)
+* 목적: cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정
+* 상세: 
+    - nowQRGenApp.swift의 Settings { ... } Scene 제거 (별도 설정 윈도우 생성 원인)
+    - cmd+, 키보드 단축키를 MainTabView의 설정 탭(tag 2)으로 전환하도록 처리
+    - .commands { CommandGroup } 또는 onReceive 등으로 단축키 바인딩 구현
+    - 중복 설정 UI 제거로 UX 일관성 확보
+
 
 
 # 📘 선택
