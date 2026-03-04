@@ -252,8 +252,27 @@ TRANSLATIONS = {
         "de": "GitHub-Repository", "es": "Repositorio GitHub", "fr": "Référentiel GitHub",
         "zh-Hans": "GitHub仓库", "zh-Hant": "GitHub儲存庫"
     },
+    "개": {
+        "ko": "개", "en": "items", "ja": "個",
+        "de": "Elemente", "es": "elementos", "fr": "éléments",
+        "zh-Hans": "个", "zh-Hant": "個"
+    },
+    "버전": {
+        "ko": "버전", "en": "Version", "ja": "バージョン",
+        "de": "Version", "es": "Versión", "fr": "Version",
+        "zh-Hans": "版本", "zh-Hant": "版本"
+    },
+    "개발자": {
+        "ko": "개발자", "en": "Developer", "ja": "開発者",
+        "de": "Entwickler", "es": "Desarrollador", "fr": "Développeur",
+        "zh-Hans": "开发者", "zh-Hant": "開發者"
+    },
+    "출시일": {
+        "ko": "출시일", "en": "Release Date", "ja": "リリース日",
+        "de": "Veröffentlichungsdatum", "es": "Fecha de lanzamiento", "fr": "Date de sortie",
+        "zh-Hans": "发布日期", "zh-Hant": "發布日期"
+    },
 }
-
 
 def parse_strings_file(filepath):
     entries = {}

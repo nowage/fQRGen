@@ -93,8 +93,9 @@ struct SettingsView: View {
                             }
                             .pickerStyle(MenuPickerStyle())
                             .frame(width: 250)
-                            .onChange(of: appLanguage) { _ in
-                                // UserDefaults 강제 동기화 (앱 재시작 없이 즉시 반영을 위해)
+                            .onChange(of: appLanguage) { newValue in
+                                // AppleLanguages 값 업데이트 (앱 재시작 없이 즉시/다음 뷰 반영)
+                                UserDefaults.standard.set([newValue], forKey: "AppleLanguages")
                                 UserDefaults.standard.synchronize()
                             }
                         }
@@ -114,7 +115,10 @@ struct SettingsView: View {
                             VStack(alignment: .leading) {
                                 Text("저장된 QR 코드")
                                     .font(.subheadline)
-                                Text("\(history.items.count)개")
+                                HStack(spacing: 2) {
+                                    Text("\(history.items.count)")
+                                    Text("개")
+                                }
                                     .font(.title2)
                                     .bold()
                                     .foregroundColor(.blue)
@@ -218,7 +222,7 @@ struct SettingsView: View {
 
 // 정보 행 컴포넌트
 struct InfoRow: View {
-    let label: String
+    let label: LocalizedStringKey
     let value: String
     
     var body: some View {
@@ -235,7 +239,7 @@ struct InfoRow: View {
 // 기능 행 컴포넌트
 struct FeatureRow: View {
     let icon: String
-    let text: String
+    let text: LocalizedStringKey
     
     var body: some View {
         HStack(spacing: 12) {

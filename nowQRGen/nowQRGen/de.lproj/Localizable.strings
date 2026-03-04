@@ -23,6 +23,7 @@
 "日本語" = "日本語";
 "简体中文" = "简体中文";
 "繁體中文" = "繁體中文";
+"개" = "Elemente";
 "개발자" = "Entwickler";
 "검색 결과가 없습니다" = "Keine Ergebnisse";
 "고급 설정" = "Erweiterte Einstellungen";
@@ -69,7 +70,7 @@
 "중간 (~15%)" = "Mittel (~15%)";
 "지원 기능" = "Unterstützte Funktionen";
 "최고 (~30%)" = "Höchste (~30%)";
-"출시일" = "Erscheinungsdatum";
+"출시일" = "Veröffentlichungsdatum";
 "취소" = "Abbrechen";
 "크기 조절 (5x ~ 20x)" = "Größenanpassung (5x ~ 20x)";
 "크기:" = "Größe:";
