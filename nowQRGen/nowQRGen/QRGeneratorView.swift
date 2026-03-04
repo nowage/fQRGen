@@ -11,7 +11,7 @@ import AppKit
 struct QRGeneratorView: View {
     @StateObject private var qrGenerator = QRCodeGenerator()
     @EnvironmentObject var history: QRCodeHistory
-    @State private var inputText = "https://example.com"
+    @State private var inputText = "https://finfra.kr/en/"
     @State private var qrImage: NSImage?
     @State private var showingAlert = false
     @State private var alertMessage = ""
@@ -19,12 +19,6 @@ struct QRGeneratorView: View {
     @State private var correctionLevel = "H"
     
     private let correctionLevels = ["L", "M", "Q", "H"]
-    private let correctionLabels = [
-        "L": "낮음 (~7%)",
-        "M": "중간 (~15%)",
-        "Q": "높음 (~25%)",
-        "H": "최고 (~30%)"
-    ]
     
     var body: some View {
         ScrollView {
@@ -44,6 +38,7 @@ struct QRGeneratorView: View {
                             .foregroundColor(.primary)
                         
                         TextEditor(text: $inputText)
+                            .font(.system(size: 24))
                             .frame(height: 100)
                             .padding(8)
                             .background(Color(NSColor.textBackgroundColor))
@@ -244,7 +239,7 @@ struct QRGeneratorView: View {
             let item = QRCodeItem(text: text)
             history.addItem(item)
         } else {
-            alertMessage = "QR 코드 생성에 실패했습니다."
+            alertMessage = "QR 코드 생성에 실패했습니다.".localized
             showingAlert = true
         }
     }
@@ -261,10 +256,10 @@ struct QRGeneratorView: View {
         
         let filename = "QR-\(Date().timeIntervalSince1970).png"
         if qrGenerator.saveQRCodeToFile(qrImage, suggestedFilename: filename) {
-            alertMessage = "파일이 저장되었습니다."
+            alertMessage = "파일이 저장되었습니다.".localized
             showingAlert = true
         } else {
-            alertMessage = "파일 저장에 실패했습니다."
+            alertMessage = "파일 저장에 실패했습니다.".localized
             showingAlert = true
         }
     }
@@ -274,10 +269,10 @@ struct QRGeneratorView: View {
         
         let filename = "QR-\(Date().timeIntervalSince1970).png"
         if let fileURL = qrGenerator.quickSaveToDownloads(qrImage, filename: filename) {
-            alertMessage = "다운로드 폴더에 저장되었습니다.\n\(fileURL.lastPathComponent)"
+            alertMessage = "QR 코드가 다운로드 폴더에 저장되었습니다.".localized + "\n\(fileURL.lastPathComponent)"
             showingAlert = true
         } else {
-            alertMessage = "파일 저장에 실패했습니다."
+            alertMessage = "파일 저장에 실패했습니다.".localized
             showingAlert = true
         }
     }
@@ -289,14 +284,14 @@ struct QRGeneratorView: View {
         pasteboard.clearContents()
         pasteboard.writeObjects([qrImage])
         
-        alertMessage = "QR 코드가 클립보드에 복사되었습니다."
+        alertMessage = "QR 코드가 클립보드에 복사되었습니다.".localized
         showingAlert = true
     }
 }
 
 // 빠른 입력 버튼 컴포넌트
 struct QuickInputButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let icon: String
     let color: Color
     let action: () -> Void
@@ -322,7 +317,7 @@ struct QuickInputButton: View {
 
 // 액션 버튼 컴포넌트
 struct ActionButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let icon: String
     let color: Color
     let action: () -> Void
