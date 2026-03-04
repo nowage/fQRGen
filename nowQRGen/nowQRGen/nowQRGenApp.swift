@@ -6,27 +6,32 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct nowQRGenApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
+    @StateObject private var menuBarManager = MenuBarManager()
+    @StateObject private var history = QRCodeHistory()
+    @AppStorage("appLanguage") private var appLanguage: String = "ko" // Default to Korean
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(history)
+                .environment(\.locale, Locale(identifier: appLanguage))
+                .frame(minWidth: 600, minHeight: 500)
+                .onAppear {
+                    menuBarManager.setupMenuBar()
+                }
+                .onDisappear {
+                    // 앱이 완전히 종료될 때만 메뉴바 아이템 제거
+                }
         }
-        .modelContainer(sharedModelContainer)
+        
+        Settings {
+            SettingsView()
+                .environmentObject(history)
+                .environment(\.locale, Locale(identifier: appLanguage))
+                .frame(minWidth: 500, minHeight: 400)
+        }
     }
 }
