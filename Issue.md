@@ -17,6 +17,12 @@
     - MainTabView 및 각 탭 뷰에 고정 frame 적용 (minWidth/maxWidth, minHeight/maxHeight 통일)
     - 히스토리 탭은 내부 List/ScrollView에서 자체 스크롤 처리하므로 창 고정에 영향 없음
     - 외부 창 레벨의 스크롤 제거 (.scrollDisabled 또는 고정 frame)
+* 구현 명세:
+    - `SettingsView`의 내부 요소를 `HStack` 안에 두 개의 `VStack`을 배치하여 2열 구조로 변경 (좌측: 기본 설정+히스토리 관리, 우측: 앱 정보+지원 기능)
+    - `MainTabView`에 `.frame(width: 800, height: 600)`을 적용하여 창 크기를 고정
+* 완료 항목:
+    - [x] SettingsView 2열 구조 적용
+    - [x] 창 크기 고정 및 외부 스크롤 제거
 
 ## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04)
 * 목적: cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정
@@ -25,6 +31,13 @@
     - cmd+, 키보드 단축키를 MainTabView의 설정 탭(tag 2)으로 전환하도록 처리
     - .commands { CommandGroup } 또는 onReceive 등으로 단축키 바인딩 구현
     - 중복 설정 UI 제거로 UX 일관성 확보
+* 구현 명세:
+    - `nowQRGenApp.swift`에서 `Settings { ... }` 씬을 제거하여 윈도우 분리 방지
+    - `.commands`에 `CommandGroup(replacing: .appSettings)`를 재정의하여 `Cmd+,` 입력 시 `OpenSettings` Notification을 발송하도록 설정
+    - `MainTabView`에서 `.onReceive`를 통해 알림을 받아 `selectedTab = 2`로 변경하여 설정 탭 활성화 구현
+* 완료 항목:
+    - [x] Settings Scene 제거
+    - [x] NotificationCenter 기반 설정 탭 자동 전환 구현
 
 
 

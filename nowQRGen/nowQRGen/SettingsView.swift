@@ -43,8 +43,10 @@ struct SettingsView: View {
                 .foregroundColor(.blue)
                 .padding(.top, 20)
             
-            VStack(spacing: 25) {
-                // 기본 설정
+            HStack(alignment: .top, spacing: 30) {
+                // 좌측 열
+                VStack(spacing: 25) {
+                    // 기본 설정
                 GroupBox {
                     VStack(alignment: .leading, spacing: 16) {
                         Text("기본 설정")
@@ -134,8 +136,14 @@ struct SettingsView: View {
                     .padding()
                 }
                 .frame(maxWidth: 500)
+                    
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity)
                 
-                // 앱 정보
+                // 우측 열
+                VStack(spacing: 25) {
+                    // 앱 정보
                 GroupBox {
                     VStack(alignment: .leading, spacing: 16) {
                         Text("앱 정보")
@@ -182,6 +190,10 @@ struct SettingsView: View {
                     .padding()
                 }
                 .frame(maxWidth: 500)
+                    
+                    Spacer(minLength: 0)
+                }
+                .frame(maxWidth: .infinity)
             }
             
             Spacer()

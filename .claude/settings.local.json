@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 .agent/skills/issue-hwm/scripts/issue-hwm.py sync --file \"Issue.md\")",
+      "Bash(python3 .agent/skills/issue-manager/scripts/issue-manager.py register --title \"cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정\" --type normal --file \"Issue.md\" --purpose \"cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정\" --detail \"    - nowQRGenApp.swift의 Settings { ... } Scene 제거 \\(별도 설정 윈도우 생성 원인\\)\\\\n    - cmd+, 키보드 단축키를 MainTabView의 설정 탭\\(tag 2\\)으로 전환하도록 처리\\\\n    - .commands { CommandGroup } 또는 onReceive 등으로 단축키 바인딩 구현\\\\n    - 중복 설정 UI 제거로 UX 일관성 확보\")"
+    ]
+  }
+}

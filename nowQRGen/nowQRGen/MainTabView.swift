@@ -30,7 +30,10 @@ struct MainTabView: View {
                 }
                 .tag(2)
         }
-        .frame(minWidth: 800, minHeight: 600)
+        .frame(width: 800, height: 600) // 창 크기 완전 고정
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("OpenSettings"))) { _ in
+            selectedTab = 2
+        }
     }
 }
 
@@ -38,6 +41,6 @@ struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
             .environmentObject(QRCodeHistory())
-            .frame(width: 900, height: 700)
+            .frame(width: 800, height: 600)
     }
 }
