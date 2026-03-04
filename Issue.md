@@ -1,25 +1,41 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 4
+* Issue HWM: 5
 
 # 🤔 결정사항
 
 # 🌱 이슈후보
 
 # 🚧 진행중
+## Issue5: 앱 탭 전환 단축키 추가 (Cmd+1/2/3) (등록: 2026.03.04)
+* 목적: Cmd+1(QR 생성), Cmd+2(히스토리), Cmd+3(설정)으로 탭 전환 단축키를 추가하여 키보드 접근성 향상
+* 상세:
+    - nowQRGenApp.swift의 `.commands` 블록에 Cmd+1/2/3 단축키 정의
+    - NotificationCenter를 통해 MainTabView의 selectedTab 변경
+    - 기존 Cmd+, (설정) 단축키와 동일한 패턴으로 구현
+* 구현 명세:
+    - `nowQRGenApp.swift`: `.commands` 내 `CommandGroup`에 Cmd+1/2/3 Button 추가, 각각 "SelectTab" Notification 발송
+    - `MainTabView.swift`: `.onReceive`로 Notification 수신하여 `selectedTab` 값 변경
+
 # 📕 중요
 
 # 📙 일반
-## Issue4: 입력 초기값 변경 및 폰트 크기 확대 (등록: 2026.03.04)
-* 목적: URL 초기값을 https://finfra.kr/en/으로 설정하고, 텍스트 입력 폰트 크기를 늘려 사용성을 개선함
-* 상세: 
-    - QRGeneratorView.swift의 inputText 초기값을 'https://finfra.kr/en/'으로 변경
-    - TextEditor에 .font() 수식어를 사용하여 폰트 크기를 기본 글꼴 대비 약 2배 확대 (예: .title 또는 .system(size: 24) 등 반영)
-
 # 📘 선택
 
 # 🌱 이슈후보
 
 # ✅ 완료
+## Issue4: 입력 초기값 변경 및 폰트 크기 확대 (등록: 2026.03.04) (✅ 완료, 690bdb7) ✅
+* 목적: URL 초기값을 https://finfra.kr/en/으로 설정하고, 텍스트 입력 폰트 크기를 늘려 사용성을 개선함
+* 상세: 
+    - QRGeneratorView.swift의 inputText 초기값을 'https://finfra.kr/en/'으로 변경
+    - TextEditor에 .font() 수식어를 사용하여 폰트 크기를 기본 글꼴 대비 약 2배 확대 (예: .title 또는 .system(size: 24) 등 반영)
+* 구현 명세:
+    - `QRGeneratorView.swift`의 `inputText` 속성 기본값을 `"https://finfra.kr/en/"`으로 수정하여 앱 런칭 시 해당 URL이 기본으로 입력되도록 함
+    - 사용자가 입력하는 텍스트가 더 잘 보이도록 `TextEditor`에 `.font(.system(size: 24))`를 추가 적용함
+* 완료 항목:
+    - [x] 초기 텍스트 값 설정
+    - [x] 폰트 사이즈 키우기 적용
+
 ## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04) (✅ 완료, 8187371) ✅
 * 목적: cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정
 * 상세: 
@@ -91,5 +107,6 @@
 # 📜 참고
 
 * Save Point :
+      - 2026.03.04: 690bdb7 (Close Issue4)
       - 2026.03.04: 8187371 (Close Issue2, Issue3)
       - 2026.03.04: f1323ae (Close Issue1)
