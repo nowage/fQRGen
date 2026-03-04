@@ -22,7 +22,8 @@ struct QRGeneratorView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 30) {
+            ScrollViewReader { proxy in
+                VStack(spacing: 30) {
                 // 제목 (웹 버전과 동일)
                 Text("QR 코드 생성기")
                     .font(.largeTitle)
@@ -115,7 +116,7 @@ struct QRGeneratorView: View {
                     .frame(maxWidth: 600)
                     
                     // 생성 버튼 (웹 버전과 동일한 텍스트)
-                    Button(action: generateQRCode) {
+                    Button(action: { generateQRCode(proxy: proxy) }) {
                         HStack {
                             Image(systemName: "qrcode")
                             Text("QR 코드 생성")
@@ -181,6 +182,7 @@ struct QRGeneratorView: View {
                             }
                         }
                         .padding(.top, 10)
+                        .id("qrResult")
                     }
                     
                     // 설정 섹션 (접을 수 있는 형태)
@@ -218,6 +220,7 @@ struct QRGeneratorView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 40)
+            }
         }
         .alert("알림", isPresented: $showingAlert) {
             Button("확인") { }
@@ -226,7 +229,7 @@ struct QRGeneratorView: View {
         }
     }
     
-    private func generateQRCode() {
+    private func generateQRCode(proxy: ScrollViewProxy) {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         qrImage = qrGenerator.generateQRCode(
             from: text,
@@ -238,6 +241,12 @@ struct QRGeneratorView: View {
             // 히스토리에 추가
             let item = QRCodeItem(text: text)
             history.addItem(item)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                withAnimation {
+                    proxy.scrollTo("qrResult", anchor: .center)
+                }
+            }
         } else {
             alertMessage = "QR 코드 생성에 실패했습니다.".localized
             showingAlert = true
