@@ -28,19 +28,26 @@ description: "앱 UI 캡처 워크플로우 (스크린샷 -> 문서화/검증)"
    ```
 
 3. **캡처 대상 확인 (Identify Target)**:
+   - **인자 파싱**: `$ARGUMENTS`에서 대상과 접미사를 분리합니다.
+     - 예: `1,2,3 ko` → 대상=`1,2,3`, 접미사=`ko`
+     - 예: `all` → 대상=`all`, 접미사 없음
    - **다중 캡처 가능**: `1,2,3` 처럼 쉼표로 연결 가능
    - **탭 번호**:
      - `1` 또는 `qr`: QR 생성
      - `2` 또는 `history`: 히스토리
      - `3` 또는 `settings`: 설정
      - `all`: 전체 탭 일괄 캡처
+   - **접미사** (옵션): `ko`, `en` 등 파일명에 추가할 구분자
 
 4. **캡처 실행 (Execute Capture)**:
    - `_tool/capture.sh` 스크립트를 사용합니다.
+   - **앱 윈도우만 캡처**합니다 (전체 화면 아님).
+   - Python Quartz로 CGWindowID를 가져와 `screencapture -l` 사용.
 
    ```bash
-   # 사용법: sh _tool/capture.sh [대상]
+   # 사용법: sh _tool/capture.sh [대상] [접미사]
    # 대상: 1, 2, 3, all, qr, history, settings
+   # 접미사: ko, en 등 (옵션)
 
    # 예: QR 생성 탭 캡처
    sh _tool/capture.sh 1
@@ -48,15 +55,16 @@ description: "앱 UI 캡처 워크플로우 (스크린샷 -> 문서화/검증)"
    # 예: 전체 탭 일괄 캡처
    sh _tool/capture.sh all
 
-   # 예: 히스토리 + 설정 연속 캡처
-   sh _tool/capture.sh 2,3
+   # 예: 히스토리 + 설정 연속 캡처 (ko 접미사)
+   sh _tool/capture.sh 2,3 ko
    ```
 
 5. **결과 확인 (Check Result)**:
    - 캡처된 이미지는 `capture/` 폴더에 저장됩니다.
+   - Read 도구로 캡처 이미지를 확인하여 사용자에게 보여줍니다.
 
    ```bash
-   open capture/
+   ls -la capture/screen_*_${TIMESTAMP}*.png
    ```
 
 6. **활용 (Usage)**:

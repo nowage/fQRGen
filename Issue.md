@@ -1,11 +1,26 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 6
+* Issue HWM: 7
+* Save Point :
+      - 2026.03.05 v1.1 Release (0057d2e)
+      - 2026.03.04: f1323ae (Close Issue1)
 
 # 🤔 결정사항
 
 # 🌱 이슈후보
 
 # 🚧 진행중
+## Issue7: 캡처 스크립트 개선 및 웹페이지 스크린샷 적용 (등록: 2026.03.05)
+* 목적: capture.sh를 앱 윈도우 전용 캡처로 개선하고, 캡처된 스크린샷을 제품 웹페이지에 적용
+* 상세:
+    - 전체 화면 캡처 → 앱 윈도우만 캡처 (Python Quartz CGWindowID 활용)
+    - 탭 전환 방식: keystroke → View 메뉴 인덱스 클릭 (OS 언어 무관)
+    - 파일명 패턴: `screen_{탭번호}_{이름}_{접미사}.png` (중복 시 타임스탬프 추가)
+    - 접미사 인자 지원 (ko, en 등)
+    - capture/ 폴더 .gitignore 추가
+* 구현 명세:
+    - `_tool/capture.sh`: `get_window_id()` 함수에 Python Quartz `CGWindowListCopyWindowInfo` 사용, `switch_tab()` 메뉴 인덱스 기반으로 변경, `resolve_filename()` 중복 파일명 처리 추가
+    - `.claude/commands/capture.md`: 접미사 인자 설명 및 윈도우 캡처 방식 명시
+    - `.gitignore`: `capture/` 폴더 추가
 
 # 📕 중요
 
@@ -119,10 +134,3 @@
 # 🚫 취소
 # 📜 참고
 
-* Save Point :
-      - 2026.03.05 v1.1 Release (0057d2e)
-      - 2026.03.04: 924b756 (Close Issue6)
-      - 2026.03.04: 9738f2f (Close Issue5)
-      - 2026.03.04: 690bdb7 (Close Issue4)
-      - 2026.03.04: 8187371 (Close Issue2, Issue3)
-      - 2026.03.04: f1323ae (Close Issue1)

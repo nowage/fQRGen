@@ -89,3 +89,6 @@ public/
 
 # Mac system files
 .DS_Store
+
+# Capture screenshots
+capture/
