@@ -19,7 +19,7 @@
 ## Issue8: 프로젝트명 변경 (nowQRGen → fQRGen) 전체 마이그레이션 (등록: 2026.03.06, commit: b483977) ✅
 * 목적: 프로젝트명을 nowQRGen에서 fQRGen으로 전면 변경 (문서, 코드, Xcode, GitHub)
 * 구현:
-    - Issue8_1: 문서/코드/스크립트 내 nowQRGen 참조 일괄 수정 (번들 ID com.nowage.nowQRGen 유지)
+    - Issue8_1: 문서/코드/스크립트 내 nowQRGen 참조 일괄 수정 (번들 ID kr.finfra.fQRGen으로 업데이트)
     - Issue8_2: Xcode 프로젝트 내부 폴더명 변경 (nowQRGen.xcodeproj→fQRGen.xcodeproj, fQRGenApp.swift 등)
     - Issue8_3: GitHub 레포지토리 이름 변경 (nowage/qr-code-generator → nowage/fQRGen)
     - 빌드 성공 확인 (BUILD SUCCEEDED)

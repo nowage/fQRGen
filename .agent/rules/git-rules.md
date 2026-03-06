@@ -40,7 +40,7 @@
 ## 머지 안전 수칙 (브랜치 번들ID/단일 인스턴스)
 
 - 번들ID 변수화 유지: pbxproj의 설정은 반드시 다음과 같아야 함
-  - `PRODUCT_BUNDLE_IDENTIFIER = "com.nowage.nowQRGen$(BUNDLE_ID_SUFFIX)";`  ← 따옴표 필수
+  - `PRODUCT_BUNDLE_IDENTIFIER = "kr.finfra.fQRGen$(BUNDLE_ID_SUFFIX)";`  ← 따옴표 필수
 - main 머지 시 원복 규칙: main에서는 `BUNDLE_ID_SUFFIX`가 비어 있으므로 원래 ID로 빌드됨(추가 조치 불필요)
 - 스크립트는 상주: `_tool/build_branch.sh`, `_tool/run_branch.sh`는 main에 있어도 무방(접미사 비어있으면 원래 ID)
 - 단일 인스턴스 가드 범위: 동일 번들ID끼리만 적용됨. 브랜치 빌드는 서로 간섭 없음
@@ -48,14 +48,14 @@
 - 락/알림 분리: 락 파일과 Darwin 알림 이름은 번들ID 포함으로 분리됨(충돌 없음)
 - 공유 리소스 주의: 다음은 현재 공유됨(필요 시 분리 작업 별도 진행)
   - 설정/로그 경로: `~/Documents/finfra/nowQRGen/` (YAML `config.yaml`, `logs/`)
-  - 캐시: `~/Library/Caches/com.nowage.nowQRGen` (고정 문자열)
+  - 캐시: `~/Library/Caches/kr.finfra.fQRGen` (고정 문자열)
 
 ### 머지 전 검증 체크리스트
 - [ ] pbxproj에 따옴표 포함 상태 확인(위 형식과 동일)
 - [ ] `xcodebuild -list -project nowQRGen/nowQRGen.xcodeproj` 파싱 성공
 - [ ] main 브랜치에서 디버그 빌드 1회 수행(접미사 비어 있음)
 - [ ] 필요 시 파생데이터 정리: `rm -rf ~/Library/Developer/Xcode/DerivedData/nowQRGen-*`
-- [ ] 결과 Info.plist의 `CFBundleIdentifier`가 `com.nowage.nowQRGen`인지 확인
+- [ ] 결과 Info.plist의 `CFBundleIdentifier`가 `kr.finfra.fQRGen`인지 확인
 
 ### 유용한 명령
 - 브랜치 동시 실행: `./_tool/run_branch.sh`

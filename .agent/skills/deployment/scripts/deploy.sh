@@ -11,7 +11,7 @@ set -e
 #   (없음) - 인자 없이 실행
 
 APP_NAME="fQRGen"
-BUNDLE_ID="com.nowage.nowQRGen"
+BUNDLE_ID="kr.finfra.fQRGen"
 APP_DEST="/Applications/_nowage_app/${APP_NAME}.app"
 
 # 프로젝트 루트 경로 설정 (스크립트 위치: .agent/skills/deployment/scripts/)

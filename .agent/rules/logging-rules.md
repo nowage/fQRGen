@@ -64,7 +64,7 @@ logD("키 이벤트: keyCode=\(keyCode)")
 
 # 🚨 사용자 정의 경로 (UserDefaults 'appRootPath' 설정 시)
 # 예: ~/Documents/finfra/fQRGen_cbhistory/logs/flog.log
-# 확인 방법: defaults read com.nowage.nowQRGen appRootPath
+# 확인 방법: defaults read kr.finfra.fQRGen appRootPath
 
 # 세션 보관 로그 (자동 생성)
 ~/Documents/finfra/<AppName>/logs/flog_YYYY-MM-DD_HH-mm-ss.log
@@ -203,10 +203,10 @@ if logger.currentLogLevel.rawValue <= LogLevel.debug.rawValue {
 ### 터미널 실시간 로그 확인
 ```bash
 # 실시간 로그 스트림 확인
-log stream --predicate 'subsystem == "com.nowage.nowQRGen"'
+log stream --predicate 'subsystem == "kr.finfra.fQRGen"'
 
 # 특정 레벨 이상만 확인 (eventType >= 2는 INFO 이상)
-log stream --predicate 'subsystem == "com.nowage.nowQRGen" AND eventType >= 2'
+log stream --predicate 'subsystem == "kr.finfra.fQRGen" AND eventType >= 2'
 ```
 
 ## 🎮 디버깅 팁
@@ -237,14 +237,14 @@ logV("클립보드 내용: '\(clipboardContent.prefix(50))'")
 
 ### 로그가 출력되지 않는 경우
 1. **로그 레벨 확인**: 설정된 레벨보다 낮은 로그는 출력되지 않음
-2. **설정 확인**: `defaults read com.nowage.nowQRGen LogLevel`
+2. **설정 확인**: `defaults read kr.finfra.fQRGen LogLevel`
 3. **앱 재시작**: 설정 변경 후 앱 재시작 필요
 4. **콘솔 출력 설정**: `logger.enableConsoleOutput = true` (코드에서 설정 시)
 
 ### Console.app에서 로그가 보이지 않는 경우
 ```swift
 // os.log 서브시스템 확인
-let osLog = OSLog(subsystem: "com.nowage.nowQRGen", category: "main")
+let osLog = OSLog(subsystem: "kr.finfra.fQRGen", category: "main")
 os_log("테스트 로그", log: osLog, type: .info)
 ```
 

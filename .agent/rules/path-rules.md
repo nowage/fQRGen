@@ -37,10 +37,10 @@ description: fQRGen의 파일 경로 처리 및 디렉토리 구조 규칙
 - **관리**: 해당 폴더들은 `.gitignore` 처리되어 레포지토리에 커밋되지 않습니다.
 
 ## 7. 샌드박스 컨테이너 데이터 폴더 사용 금지 (No Sandbox Container Data Folder)
-- **규칙**: 설정 파일(`.plist`) 및 데이터 접근을 위해 macOS 샌드박스 컨테이너 내부 경로(`~/Library/Containers/com.nowage.nowQRGen/Data/...`)를 직/간접적으로 참조하거나 사용하는 것을 엄격히 금지합니다.
+- **규칙**: 설정 파일(`.plist`) 및 데이터 접근을 위해 macOS 샌드박스 컨테이너 내부 경로(`~/Library/Containers/kr.finfra.fQRGen/Data/...`)를 직/간접적으로 참조하거나 사용하는 것을 엄격히 금지합니다.
 - **이유**: 파일 생성/접근 권한 충돌, UserDefaults 동기화 갱신 지연, 디버깅 혼동 등의 문제를 예방하기 위함입니다.
 - **해결책**:
-  - 앱 설정 관리는 반드시 글로벌 Preferences 경로(`~/Library/Preferences/com.nowage.nowQRGen.plist`)를 사용하십시오.
+  - 앱 설정 관리는 반드시 글로벌 Preferences 경로(`~/Library/Preferences/kr.finfra.fQRGen.plist`)를 사용하십시오.
 
 ## 8. AI 에이전트 파일 관리 원칙 (Agent Workspace Hygiene)
 - **규칙**: AI 에이전트(Assitant 등)는 프로젝트 루트(Project Root) 디렉토리에 **어떠한 형태의 임의 파일이나 문서를 생성해서는 안 됩니다.**
