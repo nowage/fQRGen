@@ -332,7 +332,7 @@ def main():
     except ValueError:
         rel_path = file_path # Fallback if outside root
     
-    rel_path_str = "nowQRGen/" + str(rel_path) if not str(rel_path).startswith("nowQRGen") else str(rel_path)
+    rel_path_str = "fQRGen/" + str(rel_path) if not str(rel_path).startswith("fQRGen") else str(rel_path)
 
     
     # 1. Load existing map (Key: FileName, Value: Full Row Dict)

@@ -1,5 +1,5 @@
 ---
-description: nowQRGen의 파일 경로 처리 및 디렉토리 구조 규칙
+description: fQRGen의 파일 경로 처리 및 디렉토리 구조 규칙
 ---
 
 # 경로 및 디렉토리 규칙 (Path & Directory Rules)
@@ -14,12 +14,12 @@ description: nowQRGen의 파일 경로 처리 및 디렉토리 구조 규칙
 
 ## 2. 동적 설정이 진실의 원천 (Dynamic Configuration Source of Truth)
 - **규칙**: 애플리케이션은 데이터 디렉토리를 결정할 때 반드시 사용자 설정(User's Configuration, 예: `UserDefaults`의 `appRootPath` 키)에 의존해야 합니다.
-- **금지**: `Logger`, `AppDelegate` 또는 Manager 클래스 내의 기능적 로직에서 `finfra/nowQRGen` 또는 `finfra/nowQRGenData`를 하드코딩하지 마십시오.
-- **기본값**: `AppInitializer.setupDefaults()` 또는 `PreferencesManager`의 초기 등록(Initial Registration) 과정에서만 기본 경로 문자열(예: `~/Documents/finfra/nowQRGenData`)이 나타날 수 있습니다. 다른 모든 컴포넌트는 설정된 값을 읽어야 합니다.
+- **금지**: `Logger`, `AppDelegate` 또는 Manager 클래스 내의 기능적 로직에서 `finfra/fQRGen` 또는 `finfra/fQRGenData`를 하드코딩하지 마십시오.
+- **기본값**: `AppInitializer.setupDefaults()` 또는 `PreferencesManager`의 초기 등록(Initial Registration) 과정에서만 기본 경로 문자열(예: `~/Documents/finfra/fQRGenData`)이 나타날 수 있습니다. 다른 모든 컴포넌트는 설정된 값을 읽어야 합니다.
 
 ## 3. 관례보다 설정 우선 (Configuration Over Convention)
 - **규칙**: Snippet의 디렉토리 경로는 `_config.yml` (예: `snippet_base_path`)에 의해 결정되어야 합니다.
-- **대체(Fallback)**: 설정이 누락된 경우, 하드코딩된 문자열이 아닌 표준 기본값(`.../nowQRGenData/snippets`)으로 대체해야 합니다.
+- **대체(Fallback)**: 설정이 누락된 경우, 하드코딩된 문자열이 아닌 표준 기본값(`.../fQRGenData/snippets`)으로 대체해야 합니다.
 
 ## 4. 규칙 기반 폴더 로딩 (Rule-Based Folder Loading)
 - **규칙**: `SnippetFileManager`는 `_rule.yml`이 존재하는 경우 정의된 폴더 로딩을 우선해야 합니다.

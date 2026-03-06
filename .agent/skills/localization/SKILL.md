@@ -1,7 +1,7 @@
 # Localization Skill
 
 ## 개요
-nowQRGen 앱의 다국어 지원(Localization) 작업을 자동화하는 스킬.
+fQRGen 앱의 다국어 지원(Localization) 작업을 자동화하는 스킬.
 xcstrings 파일 변환, 일반 UI 번역, 설정 UI 번역을 지원합니다.
 
 ## 지원 언어
@@ -71,7 +71,7 @@ TRANSLATIONS = {
 기존 .strings 파일에 병합(merge)하는 방식으로 동작합니다.
 
 ## 주의 사항
-- 스크립트는 프로젝트 루트(`nowQRGen/` 상위 디렉토리)에서 실행해야 합니다.
+- 스크립트는 프로젝트 루트(`fQRGen/` 상위 디렉토리)에서 실행해야 합니다.
 - xcstrings 파일이 없으면 `extract` 명령은 실행되지 않습니다.
   Xcode에서 File > New > String Catalog로 먼저 생성하세요.
 - `translate-settings` 는 기존 .strings 파일에 누락된 키만 추가합니다 (기존 번역 보존).

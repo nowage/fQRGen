@@ -4,7 +4,7 @@ import sys
 import os
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Issue HWM Manager for nowQRGen")
+    parser = argparse.ArgumentParser(description="Issue HWM Manager for fQRGen")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     # Sync Command

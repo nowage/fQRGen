@@ -5,16 +5,16 @@ Usage:
 
 Arguments:
   없음 - 프로젝트 루트에서 실행하면 됩니다.
-         nowQRGen/nowQRGen/SettingsView.swift 의 설정 UI 문자열을
-         nowQRGen/nowQRGen/{lang}.lproj/Localizable.strings 파일에 번역하여 추가합니다.
+         fQRGen/fQRGen/SettingsView.swift 의 설정 UI 문자열을
+         fQRGen/fQRGen/{lang}.lproj/Localizable.strings 파일에 번역하여 추가합니다.
 """
 
 import os
 import re
 
-RESOURCES_DIR = 'nowQRGen/nowQRGen'
+RESOURCES_DIR = 'fQRGen/fQRGen'
 
-# nowQRGen 설정(SettingsView) UI 번역 사전
+# fQRGen 설정(SettingsView) UI 번역 사전
 SETTINGS_TRANSLATIONS = {
     # 설정 탭 제목
     "설정": {
@@ -400,7 +400,7 @@ def merge_and_write_strings(strings_file, lang_folder, existing, new_entries):
 
 
 def translate_settings_strings():
-    print('nowQRGen Settings UI 문자열 번역 중...\n')
+    print('fQRGen Settings UI 문자열 번역 중...\n')
 
     for lang, lang_folder in LANG_MAP.items():
         lproj_dir = os.path.join(RESOURCES_DIR, f'{lang_folder}.lproj')

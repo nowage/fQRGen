@@ -12,37 +12,37 @@
 			containerPortal = FC12A3192DFE612C00F1D6A2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FC12A3202DFE612C00F1D6A2;
-			remoteInfo = nowQRGen;
+			remoteInfo = fQRGen;
 		};
 		FC12A33C2DFE612D00F1D6A2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC12A3192DFE612C00F1D6A2 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FC12A3202DFE612C00F1D6A2;
-			remoteInfo = nowQRGen;
+			remoteInfo = fQRGen;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC12A3212DFE612C00F1D6A2 /* nowQRGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nowQRGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC12A3312DFE612D00F1D6A2 /* nowQRGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nowQRGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC12A33B2DFE612D00F1D6A2 /* nowQRGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nowQRGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC12A3212DFE612C00F1D6A2 /* fQRGen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fQRGen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC12A3312DFE612D00F1D6A2 /* fQRGenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fQRGenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC12A33B2DFE612D00F1D6A2 /* fQRGenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fQRGenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		FC12A3232DFE612C00F1D6A2 /* nowQRGen */ = {
+		FC12A3232DFE612C00F1D6A2 /* fQRGen */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nowQRGen;
+			path = fQRGen;
 			sourceTree = "<group>";
 		};
-		FC12A3342DFE612D00F1D6A2 /* nowQRGenTests */ = {
+		FC12A3342DFE612D00F1D6A2 /* fQRGenTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nowQRGenTests;
+			path = fQRGenTests;
 			sourceTree = "<group>";
 		};
-		FC12A33E2DFE612D00F1D6A2 /* nowQRGenUITests */ = {
+		FC12A33E2DFE612D00F1D6A2 /* fQRGenUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = nowQRGenUITests;
+			path = fQRGenUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +75,9 @@
 		FC12A3182DFE612C00F1D6A2 = {
 			isa = PBXGroup;
 			children = (
-				FC12A3232DFE612C00F1D6A2 /* nowQRGen */,
-				FC12A3342DFE612D00F1D6A2 /* nowQRGenTests */,
-				FC12A33E2DFE612D00F1D6A2 /* nowQRGenUITests */,
+				FC12A3232DFE612C00F1D6A2 /* fQRGen */,
+				FC12A3342DFE612D00F1D6A2 /* fQRGenTests */,
+				FC12A33E2DFE612D00F1D6A2 /* fQRGenUITests */,
 				FC12A3222DFE612C00F1D6A2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,9 +85,9 @@
 		FC12A3222DFE612C00F1D6A2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC12A3212DFE612C00F1D6A2 /* nowQRGen.app */,
-				FC12A3312DFE612D00F1D6A2 /* nowQRGenTests.xctest */,
-				FC12A33B2DFE612D00F1D6A2 /* nowQRGenUITests.xctest */,
+				FC12A3212DFE612C00F1D6A2 /* fQRGen.app */,
+				FC12A3312DFE612D00F1D6A2 /* fQRGenTests.xctest */,
+				FC12A33B2DFE612D00F1D6A2 /* fQRGenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC12A3202DFE612C00F1D6A2 /* nowQRGen */ = {
+		FC12A3202DFE612C00F1D6A2 /* fQRGen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC12A3452DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGen" */;
+			buildConfigurationList = FC12A3452DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGen" */;
 			buildPhases = (
 				FC12A31D2DFE612C00F1D6A2 /* Sources */,
 				FC12A31E2DFE612C00F1D6A2 /* Frameworks */,
@@ -108,18 +108,18 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				FC12A3232DFE612C00F1D6A2 /* nowQRGen */,
+				FC12A3232DFE612C00F1D6A2 /* fQRGen */,
 			);
-			name = nowQRGen;
+			name = fQRGen;
 			packageProductDependencies = (
 			);
-			productName = nowQRGen;
-			productReference = FC12A3212DFE612C00F1D6A2 /* nowQRGen.app */;
+			productName = fQRGen;
+			productReference = FC12A3212DFE612C00F1D6A2 /* fQRGen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FC12A3302DFE612D00F1D6A2 /* nowQRGenTests */ = {
+		FC12A3302DFE612D00F1D6A2 /* fQRGenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC12A3482DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGenTests" */;
+			buildConfigurationList = FC12A3482DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGenTests" */;
 			buildPhases = (
 				FC12A32D2DFE612D00F1D6A2 /* Sources */,
 				FC12A32E2DFE612D00F1D6A2 /* Frameworks */,
@@ -131,18 +131,18 @@
 				FC12A3332DFE612D00F1D6A2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				FC12A3342DFE612D00F1D6A2 /* nowQRGenTests */,
+				FC12A3342DFE612D00F1D6A2 /* fQRGenTests */,
 			);
-			name = nowQRGenTests;
+			name = fQRGenTests;
 			packageProductDependencies = (
 			);
-			productName = nowQRGenTests;
-			productReference = FC12A3312DFE612D00F1D6A2 /* nowQRGenTests.xctest */;
+			productName = fQRGenTests;
+			productReference = FC12A3312DFE612D00F1D6A2 /* fQRGenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FC12A33A2DFE612D00F1D6A2 /* nowQRGenUITests */ = {
+		FC12A33A2DFE612D00F1D6A2 /* fQRGenUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC12A34B2DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGenUITests" */;
+			buildConfigurationList = FC12A34B2DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGenUITests" */;
 			buildPhases = (
 				FC12A3372DFE612D00F1D6A2 /* Sources */,
 				FC12A3382DFE612D00F1D6A2 /* Frameworks */,
@@ -154,13 +154,13 @@
 				FC12A33D2DFE612D00F1D6A2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				FC12A33E2DFE612D00F1D6A2 /* nowQRGenUITests */,
+				FC12A33E2DFE612D00F1D6A2 /* fQRGenUITests */,
 			);
-			name = nowQRGenUITests;
+			name = fQRGenUITests;
 			packageProductDependencies = (
 			);
-			productName = nowQRGenUITests;
-			productReference = FC12A33B2DFE612D00F1D6A2 /* nowQRGenUITests.xctest */;
+			productName = fQRGenUITests;
+			productReference = FC12A33B2DFE612D00F1D6A2 /* fQRGenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FC12A31C2DFE612C00F1D6A2 /* Build configuration list for PBXProject "nowQRGen" */;
+			buildConfigurationList = FC12A31C2DFE612C00F1D6A2 /* Build configuration list for PBXProject "fQRGen" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -207,9 +207,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC12A3202DFE612C00F1D6A2 /* nowQRGen */,
-				FC12A3302DFE612D00F1D6A2 /* nowQRGenTests */,
-				FC12A33A2DFE612D00F1D6A2 /* nowQRGenUITests */,
+				FC12A3202DFE612C00F1D6A2 /* fQRGen */,
+				FC12A3302DFE612D00F1D6A2 /* fQRGenTests */,
+				FC12A33A2DFE612D00F1D6A2 /* fQRGenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,12 +265,12 @@
 /* Begin PBXTargetDependency section */
 		FC12A3332DFE612D00F1D6A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC12A3202DFE612C00F1D6A2 /* nowQRGen */;
+			target = FC12A3202DFE612C00F1D6A2 /* fQRGen */;
 			targetProxy = FC12A3322DFE612D00F1D6A2 /* PBXContainerItemProxy */;
 		};
 		FC12A33D2DFE612D00F1D6A2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FC12A3202DFE612C00F1D6A2 /* nowQRGen */;
+			target = FC12A3202DFE612C00F1D6A2 /* fQRGen */;
 			targetProxy = FC12A33C2DFE612D00F1D6A2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -460,7 +460,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nowQRGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nowQRGen";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fQRGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fQRGen";
 			};
 			name = Debug;
 		};
@@ -478,7 +478,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nowQRGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/nowQRGen";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fQRGen.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/fQRGen";
 			};
 			name = Release;
 		};
@@ -494,7 +494,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = nowQRGen;
+				TEST_TARGET_NAME = fQRGen;
 			};
 			name = Debug;
 		};
@@ -510,14 +510,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = nowQRGen;
+				TEST_TARGET_NAME = fQRGen;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC12A31C2DFE612C00F1D6A2 /* Build configuration list for PBXProject "nowQRGen" */ = {
+		FC12A31C2DFE612C00F1D6A2 /* Build configuration list for PBXProject "fQRGen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC12A3432DFE612D00F1D6A2 /* Debug */,
@@ -526,7 +526,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC12A3452DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGen" */ = {
+		FC12A3452DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC12A3462DFE612D00F1D6A2 /* Debug */,
@@ -535,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC12A3482DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGenTests" */ = {
+		FC12A3482DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC12A3492DFE612D00F1D6A2 /* Debug */,
@@ -544,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC12A34B2DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "nowQRGenUITests" */ = {
+		FC12A34B2DFE612D00F1D6A2 /* Build configuration list for PBXNativeTarget "fQRGenUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC12A34C2DFE612D00F1D6A2 /* Debug */,

@@ -1,6 +1,6 @@
 //
-//  nowQRGenApp.swift
-//  nowQRGen
+//  fQRGenApp.swift
+//  fQRGen
 //
 //  Created by nowage on 2025.06.15.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct nowQRGenApp: App {
+struct fQRGenApp: App {
     @StateObject private var menuBarManager = MenuBarManager()
     @StateObject private var history = QRCodeHistory()
     @AppStorage("appLanguage") private var appLanguage: String = "ko" // Default to Korean

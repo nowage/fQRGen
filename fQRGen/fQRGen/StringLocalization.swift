@@ -1,6 +1,6 @@
 //
 //  StringLocalization.swift
-//  nowQRGen
+//  fQRGen
 //
 //  String 확장: appLanguage 설정 기반 런타임 번역 지원
 //

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-nowQRGen UI 문자열을 다국어로 번역하는 스크립트
+fQRGen UI 문자열을 다국어로 번역하는 스크립트
 ko(한국어) 기준으로 en 번역 (향후 추가 예정: ja, de, es, fr, zh-Hans, zh-Hant)
 """
 import os
 import re
 
-RESOURCES_DIR = 'nowQRGen/nowQRGen'
+RESOURCES_DIR = 'fQRGen/fQRGen'
 
 TRANSLATIONS = {
     # === 탭 이름 ===

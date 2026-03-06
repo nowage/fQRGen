@@ -1,11 +1,11 @@
 ---
 name: qa-jma-pull
-description: "ssh jma 원격 서버에 접속하여 nowQRGen 폴더(/Users/nowage/_git/__all/nowQRGen)의 변경사항을 최신으로 갱신(git pull)하는 워크플로우를 제공합니다."
+description: "ssh jma 원격 서버에 접속하여 fQRGen 폴더(/Users/nowage/_git/__all/fQRGen)의 변경사항을 최신으로 갱신(git pull)하는 워크플로우를 제공합니다."
 ---
 
 # QA JMA Pull Skill
 
-이 스킬은 `jma` 서버의 `/Users/nowage/_git/__all/nowQRGen` 디렉토리에 접속하여 `git pull`을 실행함으로써 최신 코드를 즉시 갱신하는 절차를 설명합니다.
+이 스킬은 `jma` 서버의 `/Users/nowage/_git/__all/fQRGen` 디렉토리에 접속하여 `git pull`을 실행함으로써 최신 코드를 즉시 갱신하는 절차를 설명합니다.
 
 ## 사용 시기
 - 로컬에서 푸시(push)한 내용이나 원격 저장소의 최신 변경사항을 `jma` 서버(QA/테스트 환경 등)에 즉시 반영해야 할 때 호출합니다.
@@ -17,7 +17,7 @@ description: "ssh jma 원격 서버에 접속하여 nowQRGen 폴더(/Users/nowag
 
 1. `jma` 서버에서 `git pull` 실행
 ```bash
-ssh jma 'cd /Users/nowage/_git/__all/nowQRGen && git pull'
+ssh jma 'cd /Users/nowage/_git/__all/fQRGen && git pull'
 ```
 
 2. 성공 여부 확인 후 완료 알림 실행 (사용자 규칙 필수 사항)

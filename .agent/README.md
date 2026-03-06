@@ -1,6 +1,6 @@
-# nowQRGen Agent System
+# fQRGen Agent System
 
-이 문서는 nowQRGen 프로젝트에서 AI 에이전트가 활용하는 Skills, Workflows, Rules을 정의하고 그 관계를 설명합니다.
+이 문서는 fQRGen 프로젝트에서 AI 에이전트가 활용하는 Skills, Workflows, Rules을 정의하고 그 관계를 설명합니다.
 
 ## 1. 개요
 * **Skills**: 에이전트가 단일 목적으로 수행할 수 있는 구체적인 기능 단위 (빌드 분석, 화면 캡처, 이슈 처리 등)
@@ -121,7 +121,7 @@ graph LR
 | `deployment` | 버전을 올리고, 빌드 후 `/Applications`에 배포하며, 배포 기록을 남깁니다. |
 | `emoji-mapper` | CSV 매핑 파일을 기반으로 파일 내용에 이모지를 자동으로 적용합니다. |
 | `folder-test-runner` | Markdown 기반 폴더 테스트를 실행하여 파일 변경 감지 및 규칙을 검증합니다. |
-| `get-app-root` | nowQRGen의 `appRootPath`를 설정 파일(plist)에서 읽어옵니다. |
+| `get-app-root` | fQRGen의 `appRootPath`를 설정 파일(plist)에서 읽어옵니다. |
 | `git` | Git 작업(status, add, commit, push) 및 Save Point 검증을 수행합니다. |
 | `issue-hwm` | 이슈 파일의 HWM(High Water Mark)을 검사하고 실제 데이터와 동기화(Self-Healing)합니다. |
 | `issue-manager` | 이슈 등록, ID 생성, 이동 및 종결 처리를 자동화합니다. |
@@ -129,10 +129,10 @@ graph LR
 | `log-monitor` | 실시간 키 입력 및 앱 로그 모니터링 환경을 구성합니다. |
 | `rule-manager` | 프로젝트 규칙(`.agent/rules`)을 관리, 등록, 동기화하는 스킬입니다. |
 | `save-point-update` | `Issue.md`의 Save Point 섹션을 업데이트합니다. |
-| `tdd-runner` | 전용 러너 스크립트를 사용하여 nowQRGen 프로젝트의 Swift 단위 테스트를 실행합니다. |
+| `tdd-runner` | 전용 러너 스크립트를 사용하여 fQRGen 프로젝트의 Swift 단위 테스트를 실행합니다. |
 | `toc` | 마크다운 파일의 목차(TOC)를 자동으로 생성하고 업데이트합니다. |
 | `workflow-mgr` | 워크플로우 문서(`.md`)와 시스템 문서 간의 동기화를 자동화합니다. |
-| `qa-jma-pull` | 원격 jma 서버에 접속하여 nowQRGen 코드를 최신화(git pull)합니다. |
+| `qa-jma-pull` | 원격 jma 서버에 접속하여 fQRGen 코드를 최신화(git pull)합니다. |
 
 ### 3.2. Workflows
 | Workflow명 | 역할 | 주요 활용 도구/Skill |

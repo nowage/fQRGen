@@ -59,7 +59,7 @@ def xcstrings_to_strings(xcstrings_path, output_dir):
     return len(strings)
 
 def main():
-    resources_dir = 'nowQRGen/nowQRGen'
+    resources_dir = 'fQRGen/fQRGen'
 
     xcstrings_files = [
         os.path.join(resources_dir, 'Localizable.xcstrings'),

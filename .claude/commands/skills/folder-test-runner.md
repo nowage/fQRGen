@@ -1,6 +1,6 @@
 ---
 name: Folder Test Runner
-description: Executes Markdown-based folder tests for nowQRGen to verify file monitoring and rule application logic.
+description: Executes Markdown-based folder tests for fQRGen to verify file monitoring and rule application logic.
 ---
 
 # Folder Test Runner Skill

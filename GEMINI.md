@@ -1,6 +1,6 @@
 # GEMINI.md
 
-## 프로젝트: nowQRGen (QR Code Generator)
+## 프로젝트: fQRGen (QR Code Generator)
 
 텍스트나 URL로부터 QR 코드를 생성하는 Node.js 및 Express 기반 웹 애플리케이션입니다. PNG 및 SVG 포맷을 지원하며, 파일 다운로드 및 프로그래밍 방식의 API 접근을 제공합니다.
 

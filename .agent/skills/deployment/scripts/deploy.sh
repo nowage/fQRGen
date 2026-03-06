@@ -2,7 +2,7 @@
 set -e
 
 # deploy.sh
-# nowQRGen 자동 배포 스크립트
+# fQRGen 자동 배포 스크립트
 #
 # Usage:
 #   .agent/skills/deployment/scripts/deploy.sh
@@ -10,14 +10,14 @@ set -e
 # Arguments:
 #   (없음) - 인자 없이 실행
 
-APP_NAME="nowQRGen"
+APP_NAME="fQRGen"
 BUNDLE_ID="com.nowage.nowQRGen"
 APP_DEST="/Applications/_nowage_app/${APP_NAME}.app"
 
 # 프로젝트 루트 경로 설정 (스크립트 위치: .agent/skills/deployment/scripts/)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$SCRIPT_DIR/../../../.."
-PROJECT_DIR="$PROJECT_ROOT/nowQRGen"
+PROJECT_DIR="$PROJECT_ROOT/fQRGen"
 
 cd "$PROJECT_ROOT"
 

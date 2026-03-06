@@ -1,4 +1,4 @@
-# nowQRGen 시스템 아키텍처 설계 문서
+# fQRGen 시스템 아키텍처 설계 문서
 
 **최초 작성**: 2026-03-04
 **최종 업데이트**: 2026-03-04
@@ -8,7 +8,7 @@
 
 ## 1. 프로젝트 개요
 
-**nowQRGen**은 텍스트, URL, 연락처, WiFi 정보 등으로부터 QR 코드를 생성하는 macOS 네이티브 앱입니다.
+**fQRGen**은 텍스트, URL, 연락처, WiFi 정보 등으로부터 QR 코드를 생성하는 macOS 네이티브 앱입니다.
 
 | 항목 | 내용 |
 |------|------|
@@ -27,8 +27,8 @@
 ## 2. 파일 구조
 
 ```
-nowQRGen/nowQRGen/
-├── nowQRGenApp.swift         # 앱 진입점, @main, Scene 설정
+fQRGen/fQRGen/
+├── fQRGenApp.swift         # 앱 진입점, @main, Scene 설정
 ├── ContentView.swift         # MainTabView 래퍼 (최소화된 컨테이너)
 ├── MainTabView.swift         # 탭 네비게이션 (QR 생성 / 히스토리 / 설정)
 ├── QRGeneratorView.swift     # QR 생성 메인 화면 + 하위 컴포넌트
@@ -74,7 +74,7 @@ nowQRGen/nowQRGen/
 
 ## 4. 핵심 컴포넌트 상세
 
-### 4.1 `nowQRGenApp` (앱 진입점)
+### 4.1 `fQRGenApp` (앱 진입점)
 
 - `@main` 어노테이션으로 앱 진입점 지정
 - `@StateObject` 로 `MenuBarManager`, `QRCodeHistory` 생성 및 관리
@@ -209,7 +209,7 @@ QRGeneratorView.generateQRCode()
 
 ```
 @AppStorage("appLanguage")  ──▶  SettingsView Picker
-                            ──▶  nowQRGenApp .environment(\.locale, ...)
+                            ──▶  fQRGenApp .environment(\.locale, ...)
                             ──▶  UserDefaults["AppleLanguages"] 동기화
 
 @AppStorage("defaultScale")         ──▶  SettingsView Slider (표시 전용)
@@ -221,7 +221,7 @@ QRGeneratorView.generateQRCode()
 ## 7. Notification 흐름
 
 ```
-nowQRGenApp (CommandGroup "환경설정...")
+fQRGenApp (CommandGroup "환경설정...")
     │  Cmd+,  →  NotificationCenter.post("OpenSettings")
     │
 MainTabView.onReceive("OpenSettings")
@@ -233,7 +233,7 @@ MainTabView.onReceive("OpenSettings")
 ## 8. 다국어 지원 구조
 
 ```
-nowQRGen/nowQRGen/
+fQRGen/fQRGen/
 ├── ko.lproj/Localizable.xcstrings   # 한국어
 ├── en.lproj/Localizable.xcstrings   # 영어
 ├── ja.lproj/Localizable.xcstrings   # 일본어

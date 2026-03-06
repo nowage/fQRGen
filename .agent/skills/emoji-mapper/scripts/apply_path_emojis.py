@@ -28,8 +28,8 @@ def load_mapping(csv_path):
                         
                         if filepath:
                             mapping[filepath] = emoji
-                            mapping[filepath.replace("nowQRGen/nowQRGen/", "nowQRGen/")] = emoji
-                            clean_path = filepath.replace("nowQRGen/nowQRGen/", "")
+                            mapping[filepath.replace("fQRGen/fQRGen/", "fQRGen/")] = emoji
+                            clean_path = filepath.replace("fQRGen/fQRGen/", "")
                             mapping[clean_path] = emoji
                             
                             base = os.path.basename(filepath)

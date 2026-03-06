@@ -1,11 +1,11 @@
 ---
-description: "nowQRGen 다국어 지원(Localization) 스킬 - xcstrings 변환 및 8개 언어 번역 자동화"
+description: "fQRGen 다국어 지원(Localization) 스킬 - xcstrings 변환 및 8개 언어 번역 자동화"
 ---
 
 # Localization 스킬
 
 ## 개요
-nowQRGen 앱의 다국어 지원 작업을 자동화합니다.
+fQRGen 앱의 다국어 지원 작업을 자동화합니다.
 한국어, 영어, 일본어, 독일어, 스페인어, 프랑스어, 중국어(간체/번체) 8개 언어를 지원합니다.
 
 ## 사용 가능한 명령어

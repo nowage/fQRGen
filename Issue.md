@@ -1,4 +1,4 @@
-# nowQRGen 이슈 트래커
+# fQRGen 이슈 트래커
 * Issue HWM: 8
 * Save Point :
       - 2026.03.05: 40b981d (Close Issue7)
@@ -11,21 +11,21 @@
 
 # 🚧 진행중
 # 📕 중요
-## Issue8: 프로젝트명 변경 (nowQRGen → fQRGen) 전체 마이그레이션 (등록: 2026.03.06)
-* 목적: 프로젝트명을 nowQRGen에서 fQRGen으로 전면 변경 (문서, 코드, Xcode, GitHub)
+## Issue8: 프로젝트명 변경 (fQRGen → fQRGen) 전체 마이그레이션 (등록: 2026.03.06)
+* 목적: 프로젝트명을 fQRGen에서 fQRGen으로 전면 변경 (문서, 코드, Xcode, GitHub)
 * 상세:
     - 상위 폴더는 이미 fQRGen/으로 변경 완료
-    - 내부 Xcode 폴더(fQRGen/nowQRGen/, nowQRGen.xcodeproj 등)는 아직 미변경
-    - 문서/코드 내 nowQRGen 참조를 fQRGen으로 일괄 수정 (71개 파일)
+    - 내부 Xcode 폴더(fQRGen/fQRGen/, fQRGen.xcodeproj 등)는 아직 미변경
+    - 문서/코드 내 fQRGen 참조를 fQRGen으로 일괄 수정 (71개 파일)
     - Xcode 프로젝트명, scheme, target, 내부 폴더명 변경
     - GitHub 레포지토리 이름을 fQRGen으로 변경 (또는 기존 삭제 후 재생성)
     - 번들 ID(com.nowage.nowQRGen)는 별도 검토 필요 (앱 식별자 변경 시 사용자 데이터 영향)
 
 
-### Issue8_1: 문서/코드/스크립트 내 nowQRGen 참조 일괄 수정 (등록: 2026.03.06)
-* 목적: 71개 파일에서 nowQRGen 문자열을 fQRGen으로 변경
+### Issue8_1: 문서/코드/스크립트 내 fQRGen 참조 일괄 수정 (등록: 2026.03.06)
+* 목적: 71개 파일에서 fQRGen 문자열을 fQRGen으로 변경
 * 상세:
-    - 현재 상태: 상위 폴더(fQRGen/)는 변경 완료, 파일 내용은 아직 nowQRGen 참조 유지
+    - 현재 상태: 상위 폴더(fQRGen/)는 변경 완료, 파일 내용은 아직 fQRGen 참조 유지
     - CLAUDE.md, GEMINI.md, Issue.md 등 프로젝트 문서 수정
     - .claude/rules/*.md, .agent/rules/*.md 등 에이전트 규칙 파일 수정
     - .agent/skills/*/scripts/*.py 등 스크립트 내 경로/이름 수정
@@ -34,16 +34,16 @@
     - _tool/capture.sh 등 도구 스크립트 수정
     - Swift 소스 코드 내 주석/문자열 리터럴 수정 (번들 ID는 별도 검토)
 
-### Issue8_2: Xcode 프로젝트명 nowQRGen → fQRGen 변경 (등록: 2026.03.06)
+### Issue8_2: Xcode 프로젝트명 fQRGen → fQRGen 변경 (등록: 2026.03.06)
 * 목적: Xcode 프로젝트, scheme, target, 내부 폴더명을 fQRGen으로 변경
 * 상세:
-    - 현재 상태: 상위 폴더는 fQRGen/으로 변경 완료, 내부는 아직 nowQRGen 유지
-    - fQRGen/nowQRGen/ → fQRGen/fQRGen/ 소스 디렉토리 리네임
-    - fQRGen/nowQRGen.xcodeproj → fQRGen/fQRGen.xcodeproj 리네임
+    - 현재 상태: 상위 폴더는 fQRGen/으로 변경 완료, 내부는 아직 fQRGen 유지
+    - fQRGen/fQRGen/ → fQRGen/fQRGen/ 소스 디렉토리 리네임
+    - fQRGen/fQRGen.xcodeproj → fQRGen/fQRGen.xcodeproj 리네임
     - project.pbxproj 내부 참조 일괄 수정
-    - fQRGen/nowQRGenTests/ → fQRGen/fQRGenTests/ 리네임
-    - fQRGen/nowQRGenUITests/ → fQRGen/fQRGenUITests/ 리네임
-    - scheme명 변경 (nowQRGen → fQRGen)
+    - fQRGen/fQRGenTests/ → fQRGen/fQRGenTests/ 리네임
+    - fQRGen/fQRGenUITests/ → fQRGen/fQRGenUITests/ 리네임
+    - scheme명 변경 (fQRGen → fQRGen)
     - target명 및 product name 변경
     - 번들 ID 변경 여부는 사용자와 협의 필요 (com.nowage.nowQRGen → com.nowage.fQRGen)
 
@@ -89,11 +89,11 @@
 ## Issue5: 앱 탭 전환 단축키 추가 (Cmd+1/2/3) (등록: 2026.03.04) (✅ 완료, 9738f2f) ✅
 * 목적: Cmd+1(QR 생성), Cmd+2(히스토리), Cmd+3(설정)으로 탭 전환 단축키를 추가하여 키보드 접근성 향상
 * 상세:
-    - nowQRGenApp.swift의 `.commands` 블록에 Cmd+1/2/3 단축키 정의
+    - fQRGenApp.swift의 `.commands` 블록에 Cmd+1/2/3 단축키 정의
     - NotificationCenter를 통해 MainTabView의 selectedTab 변경
     - 기존 Cmd+, (설정) 단축키와 동일한 패턴으로 구현
 * 구현 명세:
-    - `nowQRGenApp.swift`: `.commands` 내 `CommandGroup`에 Cmd+1/2/3 Button 추가, 각각 "SelectTab" Notification 발송
+    - `fQRGenApp.swift`: `.commands` 내 `CommandGroup`에 Cmd+1/2/3 Button 추가, 각각 "SelectTab" Notification 발송
     - `MainTabView.swift`: `.onReceive`로 Notification 수신하여 `selectedTab` 값 변경
 
 ## Issue4: 입력 초기값 변경 및 폰트 크기 확대 (등록: 2026.03.04) (✅ 완료, 690bdb7) ✅
@@ -111,12 +111,12 @@
 ## Issue2: cmd+, 설정 단축키가 새 윈도우를 여는 문제 수정 (등록: 2026.03.04) (✅ 완료, 8187371) ✅
 * 목적: cmd+, 단축키 입력 시 별도 Settings 윈도우가 열리는 대신, 기존 메인 윈도우의 설정 탭으로 전환되도록 수정
 * 상세: 
-    - nowQRGenApp.swift의 Settings { ... } Scene 제거 (별도 설정 윈도우 생성 원인)
+    - fQRGenApp.swift의 Settings { ... } Scene 제거 (별도 설정 윈도우 생성 원인)
     - cmd+, 키보드 단축키를 MainTabView의 설정 탭(tag 2)으로 전환하도록 처리
     - .commands { CommandGroup } 또는 onReceive 등으로 단축키 바인딩 구현
     - 중복 설정 UI 제거로 UX 일관성 확보
 * 구현 명세:
-    - `nowQRGenApp.swift`에서 `Settings { ... }` 씬을 제거하여 윈도우 분리 방지
+    - `fQRGenApp.swift`에서 `Settings { ... }` 씬을 제거하여 윈도우 분리 방지
     - `.commands`에 `CommandGroup(replacing: .appSettings)`를 재정의하여 `Cmd+,` 입력 시 `OpenSettings` Notification을 발송하도록 설정
     - `MainTabView`에서 `.onReceive`를 통해 알림을 받아 `selectedTab = 2`로 변경하여 설정 탭 활성화 구현
 * 완료 항목:
@@ -162,7 +162,7 @@
 * 목적: 언어 선택 UI에서 언어를 변경할 때 앱 UI가 즉시 전환되도록 구현
 * 상세: 
     - SettingsView의 appLanguage 변경 시 AppleLanguages UserDefaults 키도 함께 업데이트
-    - nowQRGenApp.swift에서 @AppStorage("appLanguage") 를 읽어 Bundle/Locale 환경 전파
+    - fQRGenApp.swift에서 @AppStorage("appLanguage") 를 읽어 Bundle/Locale 환경 전파
     - SwiftUI 뷰 계층에 .environment(\.locale, Locale(identifier: appLanguage)) 적용
     - 언어 변경 시 앱 재시작 없이 즉시 반영되는지 검증
     - 재시작이 불가피한 경우 "재시작 안내" 알림 다이얼로그 추가

@@ -4,7 +4,7 @@ description: 프로젝트 파일 및 디렉토리 명명 규칙 (Naming Conventi
 
 # Naming Rules (명명 규칙)
 
-이 문서는 nowQRGen 프로젝트의 파일, 디렉토리, 및 리소스 명명에 대한 표준을 정의합니다.
+이 문서는 fQRGen 프로젝트의 파일, 디렉토리, 및 리소스 명명에 대한 표준을 정의합니다.
 
 ## 1. Skills, Rules, Workflows (Agent Directories)
 Agent 관련 디렉토리(`.agent/`) 내의 **모든 파일 및 디렉토리**는 **kebab-case** (소문자 및 하이픈)를 엄격히 준수해야 합니다. **밑줄(`_`) 사용은 엄격히 금지됩니다.**

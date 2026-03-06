@@ -8,7 +8,7 @@ description: "앱 UI 캡처 워크플로우 (스크린샷 -> 문서화/검증)"
 
    ```bash
    # 앱 실행 여부 확인
-   pgrep -x nowQRGen || xcodebuild -scheme nowQRGen -project nowQRGen/nowQRGen.xcodeproj -configuration Debug build && open "$(xcodebuild -scheme nowQRGen -project nowQRGen/nowQRGen.xcodeproj -configuration Debug -showBuildSettings 2>/dev/null | grep -m1 'BUILT_PRODUCTS_DIR' | awk '{print $3}')/nowQRGen.app"
+   pgrep -x fQRGen || xcodebuild -scheme fQRGen -project fQRGen/fQRGen.xcodeproj -configuration Debug build && open "$(xcodebuild -scheme fQRGen -project fQRGen/fQRGen.xcodeproj -configuration Debug -showBuildSettings 2>/dev/null | grep -m1 'BUILT_PRODUCTS_DIR' | awk '{print $3}')/fQRGen.app"
    ```
 
 2. **UI 준비 (Prepare Target UI)**:
@@ -18,13 +18,13 @@ description: "앱 UI 캡처 워크플로우 (스크린샷 -> 문서화/검증)"
    ```bash
    sleep 2
    # QR 생성 탭 (Cmd+1)
-   osascript -e 'tell application "System Events" to tell process "nowQRGen" to keystroke "1" using command down'
+   osascript -e 'tell application "System Events" to tell process "fQRGen" to keystroke "1" using command down'
 
    # 히스토리 탭 (Cmd+2)
-   osascript -e 'tell application "System Events" to tell process "nowQRGen" to keystroke "2" using command down'
+   osascript -e 'tell application "System Events" to tell process "fQRGen" to keystroke "2" using command down'
 
    # 설정 탭 (Cmd+3)
-   osascript -e 'tell application "System Events" to tell process "nowQRGen" to keystroke "3" using command down'
+   osascript -e 'tell application "System Events" to tell process "fQRGen" to keystroke "3" using command down'
    ```
 
 3. **캡처 대상 확인 (Identify Target)**:

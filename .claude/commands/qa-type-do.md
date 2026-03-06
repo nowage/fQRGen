@@ -88,5 +88,5 @@ echo "✅ Report saved to: $REPORT_FILE"
 
 ```bash
 echo "🔍 --- Recent Logs ---"
-tail -n 20 ~/Documents/finfra/nowQRGenData/logs/flog.log
+tail -n 20 ~/Documents/finfra/fQRGenData/logs/flog.log
 ```

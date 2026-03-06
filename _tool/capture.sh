@@ -23,7 +23,7 @@
 
 set -e
 
-APP_NAME="nowQRGen"
+APP_NAME="fQRGen"
 CAPTURE_DIR="capture"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 SUFFIX="${2:+_$2}"

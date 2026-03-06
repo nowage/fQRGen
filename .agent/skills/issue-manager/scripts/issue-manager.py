@@ -6,7 +6,7 @@ import os
 import unicodedata
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description="Issue Manager for nowQRGen")
+    parser = argparse.ArgumentParser(description="Issue Manager for fQRGen")
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 

@@ -1,6 +1,6 @@
-# nowQRGen 로깅 시스템 가이드 (2025-12-11 업데이트)
+# fQRGen 로깅 시스템 가이드 (2025-12-11 업데이트)
 
-nowQRGen의 완전한 로깅 시스템 사용 가이드입니다.
+fQRGen의 완전한 로깅 시스템 사용 가이드입니다.
 
 ## 📋 로그 레벨
 
@@ -50,7 +50,7 @@ logD("키 이벤트: keyCode=\(keyCode)")
 ## ⚙️ 로그 레벨 설정
 
 ### 설정 파일(config.yaml)을 통한 설정 (권장)
-* **파일 경로**: `~/Documents/finfra/nowQRGenData/config.yaml`
+* **파일 경로**: `~/Documents/finfra/fQRGenData/config.yaml`
   * **참고**: `<AppName>`은 `CFBundleName`을 따르며, BundleID는 경로에 포함되지 않습니다.
 * **설정 방법**: 파일을 텍스트 에디터로 열어 `log_level` 값을 변경합니다.
 
@@ -60,10 +60,10 @@ logD("키 이벤트: keyCode=\(keyCode)")
 ```bash
 # 메인 로그 파일 경로 (앱 기본값)
 ~/Documents/finfra/<AppName>/logs/flog.log
-# (일반적으로 ~/Documents/finfra/nowQRGenData/logs/flog.log)
+# (일반적으로 ~/Documents/finfra/fQRGenData/logs/flog.log)
 
 # 🚨 사용자 정의 경로 (UserDefaults 'appRootPath' 설정 시)
-# 예: ~/Documents/finfra/nowQRGen_cbhistory/logs/flog.log
+# 예: ~/Documents/finfra/fQRGen_cbhistory/logs/flog.log
 # 확인 방법: defaults read com.nowage.nowQRGen appRootPath
 
 # 세션 보관 로그 (자동 생성)
@@ -119,14 +119,14 @@ tail -f ~/Documents/finfra/<AppName>/logs/flog.log
   - 작성 주체: `_tool/key-code/KeyLogger.swift`
   - 포맷: `[YYYY-MM-DD HH:mm:ss.SSS:SequenceID] name={"key_code":"k"} usage=... misc=flags ...`
   - 실시간 확인: `tail -f /tmp/fkey.log`
-- 시퀀스 ID 공유 파일: `NSTemporaryDirectory()/nowQRGen_sequence.counter`
+- 시퀀스 ID 공유 파일: `NSTemporaryDirectory()/fQRGen_sequence.counter`
   - KeyLogger ↔ 앱 간 동일 키 이벤트에 동일 SequenceID 부여
   - flog.log/Performance.log와 시간·SequenceID로 상호 연계 분석 가능
 
 ### Console.app (시스템 로그)
 1. **Applications/Utilities/Console.app 실행**
 2. **Device > Mac 선택**
-3. **Search: nowQRGen 입력**
+3. **Search: fQRGen 입력**
 
 ## 🎯 레벨별 활용 가이드
 

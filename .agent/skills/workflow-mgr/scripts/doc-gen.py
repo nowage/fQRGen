@@ -3,7 +3,7 @@ import re
 
 # Configuration
 WORKFLOW_DIR = ".agent/workflows"
-NOTE_FOR_HUMAN_PATH = "../nowQRGen_doc/noteForHuman.md"  # Relative to project root if script run from root
+NOTE_FOR_HUMAN_PATH = "../fQRGen_doc/noteForHuman.md"  # Relative to project root if script run from root
 GEMINI_MD_PATH = "GEMINI.md"
 
 def get_workflows():

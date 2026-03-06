@@ -10,11 +10,11 @@ description: "기능 추가 전 기본 라이브러리를 생성하고 테스트
 `lib/` 하위에 적절한 이름의 폴더를 생성합니다. (예: `lib/import`)
 
 ## 2. README.md 작성 (Documentation)
-생성된 폴더 내에 `README.md`를 작성하여 목적 및 적용 대상 파일(nowQRGen 내부 경로)을 명시합니다.
+생성된 폴더 내에 `README.md`를 작성하여 목적 및 적용 대상 파일(fQRGen 내부 경로)을 명시합니다.
 
 ```bash
 echo "# lib/[모듈명]" > lib/[모듈명]/README.md
-echo "목적 및 적용 대상: \`nowQRGen/Managers/...\`" >> lib/[모듈명]/README.md
+echo "목적 및 적용 대상: \`fQRGen/Managers/...\`" >> lib/[모듈명]/README.md
 ```
 
 ## 3. 리소스 및 테스트 데이터 포함 (Include Test Data)

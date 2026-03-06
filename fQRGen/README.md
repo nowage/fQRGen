@@ -1,4 +1,4 @@
-# nowQRGen - macOS QR 코드 생성기
+# fQRGen - macOS QR 코드 생성기
 
 Node.js 기반 QR 코드 생성 웹앱을 macOS 네이티브 앱으로 포팅한 프로젝트입니다.
 
@@ -35,8 +35,8 @@ Node.js 기반 QR 코드 생성 웹앱을 macOS 네이티브 앱으로 포팅한
 ## 프로젝트 구조
 
 ```
-nowQRGen/
-├── nowQRGenApp.swift          # 앱 진입점 및 메뉴바 설정
+fQRGen/
+├── fQRGenApp.swift          # 앱 진입점 및 메뉴바 설정
 ├── ContentView.swift          # 메인 컨테이너 뷰
 ├── MainTabView.swift          # 사이드바 네비게이션
 ├── QRGeneratorView.swift      # QR 생성 메인 화면
@@ -58,10 +58,10 @@ nowQRGen/
 ### 빌드 방법
 ```bash
 # 프로젝트 열기
-open nowQRGen.xcodeproj
+open fQRGen.xcodeproj
 
 # 또는 명령줄 빌드
-xcodebuild -project nowQRGen.xcodeproj -scheme nowQRGen -configuration Release
+xcodebuild -project fQRGen.xcodeproj -scheme fQRGen -configuration Release
 ```
 
 ### 실행 방법

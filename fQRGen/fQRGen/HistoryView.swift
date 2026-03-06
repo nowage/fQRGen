@@ -1,6 +1,6 @@
 //
 //  HistoryView.swift
-//  nowQRGen
+//  fQRGen
 //
 //  Created by nowage on 2025.06.15.
 //

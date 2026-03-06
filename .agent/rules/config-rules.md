@@ -1,16 +1,16 @@
 ---
-title: nowQRGen 설정 파일 가이드
+title: fQRGen 설정 파일 가이드
 description: 프로젝트의 주요 설정 파일(appSetting.json, config.yaml, _rule.yml)의 용도와 정의
 date: 2025-12-29
 tags: [config, resource, setting]
 ---
 
-# nowQRGen 설정 파일 가이드
+# fQRGen 설정 파일 가이드
 
 이 문서는 프로젝트의 동작을 제어하는 3가지 핵심 설정 파일의 위치와 역할을 정의합니다.
 
 ## 1. `_data/appSetting.json`
-* **파일 경로**: `nowQRGen/nowQRGen/_data/appSetting.json`
+* **파일 경로**: `fQRGen/fQRGen/_data/appSetting.json`
 * **용도**: **Buffer Clear Keys (버퍼 초기화 키) 정의**
 * **설명**: 
   - 스니펫 감지 로직(Abbreviation Matcher)이 동작할 때, 입력 버퍼를 초기화하는 키들을 정의합니다.
@@ -20,7 +20,7 @@ tags: [config, resource, setting]
 * **참조**: [`info_GLOSSARY.md`](./info_GLOSSARY.md) (11. 버퍼 클리어 키)
 
 ## 2. `config.yaml`
-* **파일 경로**: `nowQRGen/nowQRGen/config.yaml`
+* **파일 경로**: `fQRGen/fQRGen/config.yaml`
 * **용도**: **사용자 기본 설정 (Preferences) 및 시스템 초기값**
 * **설명**: 
   - 앱의 전반적인 동작 옵션을 정의하는 YAML 파일입니다.
@@ -35,7 +35,7 @@ tags: [config, resource, setting]
 * **참조**: [`AGENTS.md`](../AGENTS.md) (빌드·테스트·개발 명령 > 설정 조회)
 
 ## 3. `_rule.yml`
-* **파일 경로**: `nowQRGen/nowQRGen/_rule.yml`
+* **파일 경로**: `fQRGen/fQRGen/_rule.yml`
 * **용도**: **특수 폴더 규칙 (Special Folder Rules) 정의**
 * **설명**: 
   - `_`로 시작하는 특수 폴더들에 적용될 규칙(Prefix, Suffix, Trigger Bias 등)을 정의합니다.
