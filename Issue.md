@@ -1,5 +1,5 @@
 # nowQRGen 이슈 트래커
-* Issue HWM: 7
+* Issue HWM: 8
 * Save Point :
       - 2026.03.05: 40b981d (Close Issue7)
       - 2026.03.05 v1.1 Release (0057d2e)
@@ -11,6 +11,44 @@
 
 # 🚧 진행중
 # 📕 중요
+## Issue8: 프로젝트명 변경 (nowQRGen → fQRGen) 전체 마이그레이션 (등록: 2026.03.06)
+* 목적: 프로젝트명을 nowQRGen에서 fQRGen으로 전면 변경 (폴더, 문서, 코드, Xcode, GitHub)
+* 상세: 
+    - 문서/코드 내 nowQRGen 참조를 fQRGen으로 일괄 수정 (71개 파일)
+    - Xcode 프로젝트명, scheme, target, 폴더명 변경
+    - GitHub 레포지토리 이름을 fQRGen으로 변경 (또는 기존 삭제 후 재생성)
+    - 번들 ID(com.nowage.nowQRGen)는 별도 검토 필요 (앱 식별자 변경 시 사용자 데이터 영향)
+
+
+### Issue8_1: 문서/코드/스크립트 내 nowQRGen 참조 일괄 수정 (등록: 2026.03.06)
+* 목적: 71개 파일에서 nowQRGen 문자열을 fQRGen으로 변경
+* 상세: 
+    - CLAUDE.md, GEMINI.md, Issue.md 등 프로젝트 문서 수정
+    - .claude/rules/*.md, .agent/rules/*.md 등 에이전트 규칙 파일 수정
+    - .agent/skills/*/scripts/*.py 등 스크립트 내 경로/이름 수정
+    - .claude/commands/*.md 워크플로우 문서 수정
+    - _doc_design/*.md 설계 문서 수정
+    - _tool/capture.sh 등 도구 스크립트 수정
+    - Swift 소스 코드 내 주석/문자열 리터럴 수정 (번들 ID는 별도 검토)
+
+### Issue8_2: Xcode 프로젝트명 nowQRGen → fQRGen 변경 (등록: 2026.03.06)
+* 목적: Xcode 프로젝트, scheme, target, 폴더명을 fQRGen으로 변경
+* 상세: 
+    - nowQRGen/ 디렉토리를 fQRGen/으로 리네임
+    - nowQRGen.xcodeproj → fQRGen.xcodeproj 리네임
+    - project.pbxproj 내부 참조 일괄 수정
+    - nowQRGenTests/ → fQRGenTests/, nowQRGenUITests/ → fQRGenUITests/ 리네임
+    - scheme명 변경 (nowQRGen → fQRGen)
+    - target명 및 product name 변경
+    - 번들 ID 변경 여부는 사용자와 협의 필요 (com.nowage.nowQRGen → com.nowage.fQRGen)
+
+### Issue8_3: GitHub 레포지토리 이름 변경 (fQRGen으로) (등록: 2026.03.06)
+* 목적: GitHub 레포지토리명을 fQRGen으로 변경하거나, 기존 삭제 후 재생성
+* 상세: 
+    - 방법 1: gh repo rename fQRGen으로 기존 레포 이름 변경 시도
+    - 방법 2: 이름 변경 불가 시 기존 레포(nowage/qr-code-generator) 삭제 후 nowage/fQRGen으로 재생성
+    - git remote origin URL 업데이트
+    - 기존 레포의 이슈/PR/릴리즈 등 데이터 보존 여부 확인
 
 # 📙 일반
 # 📘 선택
