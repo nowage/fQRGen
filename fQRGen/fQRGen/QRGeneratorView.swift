@@ -237,7 +237,7 @@ struct QRGeneratorView: View {
             correctionLevel: correctionLevel
         )
         
-        if let qrImage = qrImage {
+        if qrImage != nil {
             // 히스토리에 추가
             let item = QRCodeItem(text: text)
             history.addItem(item)

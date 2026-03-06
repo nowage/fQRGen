@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct QRCodeItem: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let text: String
     let timestamp: Date
     let filename: String?
